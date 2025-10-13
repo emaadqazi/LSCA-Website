@@ -29,11 +29,6 @@ const SinglePage = () => {
       
       {/* Main Content */}
       <div className="relative z-10">
-        {/* Test content first */}
-        <div className="min-h-screen flex items-center justify-center">
-          <h1 className="text-6xl font-bold text-white">LSCA Website</h1>
-        </div>
-        
         {/* Home Section */}
         <HeroSection />
         
