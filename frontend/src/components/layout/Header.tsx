@@ -16,7 +16,7 @@ const Header = () => {
           style={{ fontFamily: '"Arial Black", "Helvetica Neue", Arial, sans-serif', fontWeight: 900, letterSpacing: '-0.02em' }}
         >
           <img 
-            src="/LSCA Logo.jpeg" 
+            src="./LSCA Logo.jpeg" 
             alt="LSCA Logo" 
             className="h-10 w-auto object-contain"
             style={{
