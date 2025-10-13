@@ -3,9 +3,9 @@ import { Package, TruckIcon, Globe, Layers, Factory, Warehouse, Ship, Plane, Bar
 
 const HeroSection = () => {
   return (
-    <div className="relative min-h-screen overflow-hidden">
-      {/* Teal to Blue Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-cyan-200 via-teal-400 via-blue-500 to-blue-800">
+    <section id="home" className="relative min-h-screen overflow-hidden">
+      {/* Remove duplicate background since we have it in SinglePage */}
+      <div className="absolute inset-0 bg-transparent">
         {/* Wave-like overlay for depth */}
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-0 left-0 w-full h-1/4 bg-gradient-to-b from-cyan-100/50 to-transparent"></div>
@@ -371,45 +371,6 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Subheading */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed"
-          >
-            Connecting the world and you. Join us in shaping the future of global supply chains through innovation, networking, and excellence.
-          </motion.p>
-
-          {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          >
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white text-teal-800 px-8 py-4 rounded-lg text-lg font-bold shadow-2xl hover:shadow-cyan-300/50 transition-all duration-300 flex items-center gap-2 min-w-[200px] justify-center"
-            >
-              Get Started
-              <motion.span
-                animate={{ x: [0, 5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-              >
-                →
-              </motion.span>
-            </motion.button>
-
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white/20 backdrop-blur-sm text-white border-2 border-white/50 px-8 py-4 rounded-lg text-lg font-bold hover:bg-white/30 transition-all duration-300 min-w-[200px]"
-            >
-              Learn More
-            </motion.button>
-          </motion.div>
 
           {/* Stats Section */}
           <motion.div
@@ -486,7 +447,7 @@ const HeroSection = () => {
           </svg>
         </motion.div>
       </motion.div>
-    </div>
+    </section>
   )
 }
 
