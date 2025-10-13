@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Linkedin, Mail, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Linkedin, ChevronLeft, ChevronRight } from 'lucide-react'
 import { useState } from 'react'
 
 const TeamSection = () => {
@@ -7,210 +7,138 @@ const TeamSection = () => {
 
   const portfolios = [
     {
-      name: "Co-presidents",
-      color: "from-purple-500 to-pink-500",
+      name: "Leadership",
       vps: [
         {
-          name: "Emaad Qazi",
+          name: "Brady Kuzma",
           role: "Co-President",
-          image: "/images/MembersPFP/VPs/EmaadQazi.png",
-          linkedin: "#",
-          email: "emaad.qazi@lsca.ca",
-          bio: "Leading LSCA with strategic vision and operational excellence."
+          yearMajor: "3rd Year BBA/BSc Student",
+          image: "/images/MembersPFP/VPs/BradyKuzma.png",
+          linkedin: "https://www.linkedin.com/in/brady-kuzma/",
+          email: "brady.kuzma@lsca.ca"
         },
         {
           name: "Konstance Vondouris",
-          role: "Co-President", 
+          role: "Co-President",
+          yearMajor: "3rd Year BBA Student",
           image: "/images/MembersPFP/VPs/KonstanceVondouris.png",
-          linkedin: "#",
-          email: "konstance.vondouris@lsca.ca",
-          bio: "Driving innovation and growth in supply chain education."
-        }
-      ],
-      directors: [
-        {
-          name: "Director 1",
-          role: "Director",
-          image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face",
-          linkedin: "#",
-          email: "director1@lsca.ca",
-          bio: "Supporting presidential initiatives and strategic planning."
-        }
-      ]
-    },
-    {
-      name: "Corporate",
-      color: "from-blue-500 to-cyan-500",
-      vps: [
-        {
-          name: "Abira Selim",
-          role: "VP Corporate",
-          image: "/images/MembersPFP/VPs/AbiraSelim.png",
-          linkedin: "#",
-          email: "abira.selim@lsca.ca",
-          bio: "Building strategic partnerships with industry leaders."
-        },
-        {
-          name: "Zanir Khot",
-          role: "VP Corporate",
-          image: "/images/MembersPFP/VPs/ZanirKhot.png",
-          linkedin: "#",
-          email: "zanir.khot@lsca.ca",
-          bio: "Developing corporate relationships and sponsorship opportunities."
-        }
-      ],
-      directors: [
-        {
-          name: "Director 1",
-          role: "Corporate Director",
-          image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-          linkedin: "#",
-          email: "corporate.director@lsca.ca",
-          bio: "Managing corporate relationships and partnerships."
-        }
-      ]
-    },
-    {
-      name: "Education",
-      color: "from-green-500 to-emerald-500",
-      vps: [
-        {
-          name: "Ewan Macneil",
-          role: "VP Education",
-          image: "/images/MembersPFP/VPs/EwanMacneil.png",
-          linkedin: "#",
-          email: "ewan.macneil@lsca.ca",
-          bio: "Developing educational programs and learning opportunities."
+          linkedin: "https://www.linkedin.com/in/konstance-voudouris-628003291/",
+          email: "konstance.vondouris@lsca.ca"
         },
         {
           name: "Ben Maycock",
-          role: "VP Education",
+          role: "Executive VP",
+          yearMajor: "3rd Year BBA Student",
           image: "/images/MembersPFP/VPs/BenMaycock.png",
-          linkedin: "#",
-          email: "ben.maycock@lsca.ca",
-          bio: "Creating innovative learning experiences and educational content."
-        }
-      ],
-      directors: [
-        {
-          name: "Director 1",
-          role: "Education Director",
-          image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
-          linkedin: "#",
-          email: "education.director@lsca.ca",
-          bio: "Creating engaging educational content and workshops."
-        }
-      ]
-    },
-    {
-      name: "Events",
-      color: "from-orange-500 to-red-500",
-      vps: [
-        {
-          name: "Brayden Greekamol",
-          role: "VP Events",
-          image: "/images/MembersPFP/VPs/BraydenGreekamol.png",
-          linkedin: "#",
-          email: "brayden.greekamol@lsca.ca",
-          bio: "Organizing memorable events and networking opportunities."
+          linkedin: "https://www.linkedin.com/in/ben-maycock-56a84b29b/",
+          email: "ben.maycock@lsca.ca"
         },
         {
-          name: "Brady Kuzma",
-          role: "VP Events",
-          image: "/images/MembersPFP/VPs/BradyKuzma.png",
-          linkedin: "#",
-          email: "brady.kuzma@lsca.ca",
-          bio: "Coordinating logistics and ensuring successful event execution."
-        }
-      ],
-      directors: [
-        {
-          name: "Director 1",
-          role: "Events Director",
-          image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
-          linkedin: "#",
-          email: "events.director@lsca.ca",
-          bio: "Planning and executing successful events and activities."
+          name: "Ewan Macneil",
+          role: "Senior Advisor",
+          yearMajor: "4th Year BBA Student",
+          image: "/images/MembersPFP/VPs/EwanMacneil.png",
+          linkedin: "https://www.linkedin.com/in/ewanmacneil/",
+          email: "ewan.macneil@lsca.ca"
         }
       ]
     },
     {
       name: "Marketing",
-      color: "from-pink-500 to-rose-500",
-      vps: [
-        {
-          name: "Hailey Krywiak",
-          role: "VP Marketing",
-          image: "/images/MembersPFP/VPs/HaileyKrywiak.png",
-          linkedin: "#",
-          email: "hailey.krywiak@lsca.ca",
-          bio: "Leading marketing strategies and brand development."
-        }
-      ],
-      directors: [
-        {
-          name: "Director 1",
-          role: "Marketing Director",
-          image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-          linkedin: "#",
-          email: "marketing.director@lsca.ca",
-          bio: "Creating compelling marketing campaigns and content."
-        }
-      ]
-    },
-    {
-      name: "Software Development",
-      color: "from-indigo-500 to-purple-500",
       vps: [
         {
           name: "Chris Weng",
-          role: "VP Software Development",
+          role: "VP of Marketing",
+          yearMajor: "2nd Year BBA/BMath (UW)",
           image: "/images/MembersPFP/VPs/ChrisWeng.png",
-          linkedin: "#",
-          email: "chris.weng@lsca.ca",
-          bio: "Leading digital innovation and technology solutions."
-        }
-      ],
-      directors: [
-        {
-          name: "Director 1",
-          role: "Software Director",
-          image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
-          linkedin: "#",
-          email: "software.director@lsca.ca",
-          bio: "Developing technical solutions and digital platforms."
+          linkedin: "https://www.linkedin.com/in/chris-weng-intern/",
+          email: "chris.weng@lsca.ca"
         }
       ]
     },
     {
       name: "Internal",
-      color: "from-teal-500 to-cyan-500",
       vps: [
         {
           name: "Evika Trinidade",
-          role: "VP Internal",
+          role: "VP of Internal",
+          yearMajor: "4th Year BBA Student",
           image: "/images/MembersPFP/VPs/EvikaTrinidade.png",
-          linkedin: "#",
-          email: "evika.trinidade@lsca.ca",
-          bio: "Managing internal operations and member engagement."
+          linkedin: "https://www.linkedin.com/in/evika-trinidade/",
+          email: "evika.trinidade@lsca.ca"
+        }
+      ]
+    },
+    {
+      name: "Events",
+      vps: [
+        {
+          name: "Hailey Krywiak",
+          role: "Co-VP of Events",
+          yearMajor: "3rd Year BBA Student",
+          image: "/images/MembersPFP/VPs/HaileyKrywiak.png",
+          linkedin: "https://www.linkedin.com/in/hailey-krywiak-4ba971303/",
+          email: "hailey.krywiak@lsca.ca"
         },
         {
-          name: "Afnan Shan",
-          role: "VP Internal",
-          image: "/images/MembersPFP/VPs/AfnanShan.png",
-          linkedin: "#",
-          email: "afnan.shan@lsca.ca",
-          bio: "Supporting member relations and internal communications."
+          name: "Brayden Greekamol",
+          role: "Co-VP of Events",
+          yearMajor: "3rd Year BBA Student",
+          image: "/images/MembersPFP/VPs/BraydenGreekamol.png",
+          linkedin: "https://www.linkedin.com/in/brayden-greekamol/",
+          email: "brayden.greekamol@lsca.ca"
         }
-      ],
-      directors: [
+      ]
+    },
+    {
+      name: "Software",
+      vps: [
         {
-          name: "Director 1",
-          role: "Internal Director",
-          image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-          linkedin: "#",
-          email: "internal.director@lsca.ca",
-          bio: "Supporting internal processes and member services."
+          name: "Emaad Qazi",
+          role: "VP of Software Development",
+          yearMajor: "3rd Year BBA/BSc Student",
+          image: "/images/MembersPFP/VPs/EmaadQazi.png",
+          linkedin: "https://www.linkedin.com/in/emaadqazi/",
+          email: "emaad.qazi@lsca.ca"
+        }
+      ]
+    },
+    {
+      name: "Finance",
+      vps: [
+        {
+          name: "Zanir Khot",
+          role: "VP of Finance",
+          yearMajor: "3rd Year BBA Student",
+          image: "/images/MembersPFP/VPs/ZanirKhot.png",
+          linkedin: "https://www.linkedin.com/in/zanirkhot/",
+          email: "zanir.khot@lsca.ca"
+        }
+      ]
+    },
+    {
+      name: "Corporate",
+      vps: [
+        {
+          name: "Abira Selim",
+          role: "VP of Corporate Relations",
+          yearMajor: "4th Year BBA Student",
+          image: "/images/MembersPFP/VPs/AbiraSelim.png",
+          linkedin: "https://www.linkedin.com/in/abiraselim2004/",
+          email: "abira.selim@lsca.ca"
+        }
+      ]
+    },
+    {
+      name: "Education",
+      vps: [
+        {
+          name: "Afnan Shan",
+          role: "VP of Education",
+          yearMajor: "3rd Year BBA Student",
+          image: "/images/MembersPFP/VPs/AfnanShan.png",
+          linkedin: "https://www.linkedin.com/in/afnanshan/",
+          email: "afnan.shan@lsca.ca"
         }
       ]
     }
@@ -238,8 +166,8 @@ const TeamSection = () => {
               style={{ fontFamily: '"Arial Black", "Helvetica Neue", Arial, sans-serif', fontWeight: 900, letterSpacing: '-0.02em' }}>
             Meet the Team
           </h2>
-          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-            Get to know the dedicated students who make LSCA possible. Our team is committed to providing exceptional value to our members.
+          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed font-bold">
+            Get to the know the LSCA team, consisting of 12 VPS and 15+ Directors accross 8 portfolios!
           </p>
         </motion.div>
 
@@ -263,7 +191,7 @@ const TeamSection = () => {
                 whileTap={{ scale: 0.95 }}
                 className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                   activePortfolio === index
-                    ? `bg-gradient-to-r ${portfolio.color} text-white shadow-lg`
+                    ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg'
                     : 'bg-white/10 backdrop-blur-sm border border-white/20 text-white/80 hover:bg-white/20'
                 }`}
               >
@@ -288,100 +216,65 @@ const TeamSection = () => {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20"
+          className="text-center"
         >
-          <div className="text-center mb-8">
-            <h3 className={`text-4xl font-black mb-4 bg-gradient-to-r ${portfolios[activePortfolio].color} bg-clip-text text-transparent`}>
+          <div className="mb-12">
+            <h3 className="text-5xl font-black mb-4 bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
               {portfolios[activePortfolio].name}
             </h3>
           </div>
 
-          {/* VPs Row */}
-          <div className="mb-12">
-            <h4 className="text-2xl font-bold text-white mb-6 text-center">Vice Presidents</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {portfolios[activePortfolio].vps.map((member, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center hover:bg-white/10 transition-all duration-300 group"
-                >
-                  <div className="mb-4">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-20 h-20 rounded-full mx-auto mb-4 object-cover border-4 border-cyan-300/30"
-                    />
-                    <h5 className="text-lg font-bold text-white mb-1">{member.name}</h5>
-                    <p className="text-cyan-300 font-semibold mb-3">{member.role}</p>
-                    <p className="text-white/80 text-sm leading-relaxed">{member.bio}</p>
-                  </div>
+          {/* Team Members - Dynamic Grid Based on Count */}
+          <div className={`grid gap-12 justify-items-center ${
+            portfolios[activePortfolio].vps.length === 1 
+              ? 'grid-cols-1 max-w-md mx-auto'
+              : portfolios[activePortfolio].vps.length === 2
+              ? 'grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto'
+              : portfolios[activePortfolio].vps.length === 3
+              ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto'
+              : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 max-w-7xl mx-auto'
+          }`}>
+            {portfolios[activePortfolio].vps.map((member, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="text-center group flex flex-col items-center"
+              >
+                {/* Large Profile Picture */}
+                <div className="mb-6">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-96 h-96 md:w-[28rem] md:h-[28rem] rounded-full mx-auto object-cover border-4 border-white/20 shadow-lg group-hover:border-cyan-300/50 transition-all duration-300"
+                  />
+                </div>
+                
+                {/* Text Content Container with Fixed Height */}
+                <div className="flex flex-col items-center justify-center min-h-[120px] w-full">
+                  {/* Name */}
+                  <h5 className="text-2xl md:text-3xl font-bold text-white mb-3 leading-tight">{member.name}</h5>
                   
-                  <div className="flex justify-center space-x-4">
-                    <motion.a
-                      href={member.linkedin}
-                      whileHover={{ scale: 1.1 }}
-                      className="text-cyan-300 hover:text-cyan-200 transition-colors"
-                    >
-                      <Linkedin size={18} />
-                    </motion.a>
-                    <motion.a
-                      href={`mailto:${member.email}`}
-                      whileHover={{ scale: 1.1 }}
-                      className="text-cyan-300 hover:text-cyan-200 transition-colors"
-                    >
-                      <Mail size={18} />
-                    </motion.a>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* Directors Row */}
-          <div>
-            <h4 className="text-2xl font-bold text-white mb-6 text-center">Directors</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {portfolios[activePortfolio].directors.map((member, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center hover:bg-white/10 transition-all duration-300 group"
-                >
-                  <div className="mb-4">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-20 h-20 rounded-full mx-auto mb-4 object-cover border-4 border-cyan-300/30"
-                    />
-                    <h5 className="text-lg font-bold text-white mb-1">{member.name}</h5>
-                    <p className="text-cyan-300 font-semibold mb-3">{member.role}</p>
-                    <p className="text-white/80 text-sm leading-relaxed">{member.bio}</p>
-                  </div>
+                  {/* Role */}
+                  <p className="text-white font-medium mb-2 text-xl leading-tight min-h-[28px] flex items-center justify-center">{member.role}</p>
                   
-                  <div className="flex justify-center space-x-4">
-                    <motion.a
-                      href={member.linkedin}
-                      whileHover={{ scale: 1.1 }}
-                      className="text-cyan-300 hover:text-cyan-200 transition-colors"
-                    >
-                      <Linkedin size={18} />
-                    </motion.a>
-                    <motion.a
-                      href={`mailto:${member.email}`}
-                      whileHover={{ scale: 1.1 }}
-                      className="text-cyan-300 hover:text-cyan-200 transition-colors"
-                    >
-                      <Mail size={18} />
-                    </motion.a>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+                  {/* Year/Major */}
+                  {member.yearMajor && (
+                    <p className="text-white/70 mb-4 text-base font-bold leading-tight min-h-[24px] flex items-center justify-center text-center">{member.yearMajor}</p>
+                  )}
+                </div>
+                
+                {/* LinkedIn Link */}
+                <motion.a
+                  href={member.linkedin}
+                  whileHover={{ scale: 1.1 }}
+                  className="inline-flex items-center text-white/60 hover:text-white transition-colors mt-2"
+                >
+                  <Linkedin size={20} />
+                </motion.a>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
       </div>

@@ -43,7 +43,7 @@ const EventsSection = () => {
               style={{ fontFamily: '"Arial Black", "Helvetica Neue", Arial, sans-serif', fontWeight: 900, letterSpacing: '-0.02em' }}>
             Recent Events
           </h2>
-          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed font-bold">
             Stay connected with our latest events, workshops, and networking opportunities designed to advance your supply chain career.
           </p>
         </motion.div>
@@ -60,25 +60,25 @@ const EventsSection = () => {
             >
               <div className="mb-4">
                 <h3 className="text-2xl font-bold text-white mb-3">{event.title}</h3>
-                <p className="text-white/80 mb-4">{event.description}</p>
+                <p className="text-white/80 mb-4 font-bold">{event.description}</p>
               </div>
               
               <div className="space-y-3">
                 <div className="flex items-center text-cyan-300">
                   <Calendar size={20} className="mr-3" />
-                  <span className="text-white/90">{event.date}</span>
+                  <span className="text-white/90 font-bold">{event.date}</span>
                 </div>
                 <div className="flex items-center text-cyan-300">
                   <Clock size={20} className="mr-3" />
-                  <span className="text-white/90">{event.time}</span>
+                  <span className="text-white/90 font-bold">{event.time}</span>
                 </div>
                 <div className="flex items-center text-cyan-300">
                   <MapPin size={20} className="mr-3" />
-                  <span className="text-white/90">{event.location}</span>
+                  <span className="text-white/90 font-bold">{event.location}</span>
                 </div>
                 <div className="flex items-center text-cyan-300">
                   <Users size={20} className="mr-3" />
-                  <span className="text-white/90">{event.attendees} attendees</span>
+                  <span className="text-white/90 font-bold">{event.attendees} attendees</span>
                 </div>
               </div>
             </motion.div>

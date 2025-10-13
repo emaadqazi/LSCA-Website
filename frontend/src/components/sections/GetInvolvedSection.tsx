@@ -43,7 +43,7 @@ const GetInvolvedSection = () => {
               style={{ fontFamily: '"Arial Black", "Helvetica Neue", Arial, sans-serif', fontWeight: 900, letterSpacing: '-0.02em' }}>
             Get Involved
           </h2>
-          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed font-bold">
             Ready to take your supply chain journey to the next level? Here are the ways you can get involved with LSCA.
           </p>
         </motion.div>
@@ -62,7 +62,7 @@ const GetInvolvedSection = () => {
                 <option.icon size={48} />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">{option.title}</h3>
-              <p className="text-white/80 mb-6 leading-relaxed">{option.description}</p>
+              <p className="text-white/80 mb-6 leading-relaxed font-bold">{option.description}</p>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

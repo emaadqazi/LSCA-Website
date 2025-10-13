@@ -16,7 +16,7 @@ const ContactSection = () => {
               style={{ fontFamily: '"Arial Black", "Helvetica Neue", Arial, sans-serif', fontWeight: 900, letterSpacing: '-0.02em' }}>
             Contact Us
           </h2>
-          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed font-bold">
             Have questions about LSCA? Want to get involved? We'd love to hear from you. Reach out to us through any of the channels below.
           </p>
         </motion.div>
@@ -39,8 +39,8 @@ const ContactSection = () => {
                     <Mail size={24} />
                   </div>
                   <div>
-                    <p className="text-white/80 text-sm">Email</p>
-                    <p className="text-white font-semibold">info@lsca.ca</p>
+                    <p className="text-white/80 text-sm font-bold">Email</p>
+                    <p className="text-white font-bold">info@lsca.ca</p>
                   </div>
                 </div>
                 
@@ -49,8 +49,8 @@ const ContactSection = () => {
                     <Phone size={24} />
                   </div>
                   <div>
-                    <p className="text-white/80 text-sm">Phone</p>
-                    <p className="text-white font-semibold">+1 (519) 884-0710</p>
+                    <p className="text-white/80 text-sm font-bold">Phone</p>
+                    <p className="text-white font-bold">+1 (519) 884-0710</p>
                   </div>
                 </div>
                 
@@ -59,8 +59,8 @@ const ContactSection = () => {
                     <MapPin size={24} />
                   </div>
                   <div>
-                    <p className="text-white/80 text-sm">Address</p>
-                    <p className="text-white font-semibold">
+                    <p className="text-white/80 text-sm font-bold">Address</p>
+                    <p className="text-white font-bold">
                       Wilfrid Laurier University<br />
                       75 University Avenue West<br />
                       Waterloo, ON N2L 3C5
@@ -84,7 +84,7 @@ const ContactSection = () => {
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-white/80 text-sm font-medium mb-2">First Name</label>
+                  <label className="block text-white/80 text-sm font-bold mb-2">First Name</label>
                   <input
                     type="text"
                     className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:outline-none focus:border-cyan-300 transition-colors"
@@ -92,7 +92,7 @@ const ContactSection = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-white/80 text-sm font-medium mb-2">Last Name</label>
+                  <label className="block text-white/80 text-sm font-bold mb-2">Last Name</label>
                   <input
                     type="text"
                     className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:outline-none focus:border-cyan-300 transition-colors"
@@ -102,7 +102,7 @@ const ContactSection = () => {
               </div>
               
               <div>
-                <label className="block text-white/80 text-sm font-medium mb-2">Email</label>
+                <label className="block text-white/80 text-sm font-bold mb-2">Email</label>
                 <input
                   type="email"
                   className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:outline-none focus:border-cyan-300 transition-colors"
@@ -111,7 +111,7 @@ const ContactSection = () => {
               </div>
               
               <div>
-                <label className="block text-white/80 text-sm font-medium mb-2">Subject</label>
+                <label className="block text-white/80 text-sm font-bold mb-2">Subject</label>
                 <input
                   type="text"
                   className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:outline-none focus:border-cyan-300 transition-colors"
@@ -120,7 +120,7 @@ const ContactSection = () => {
               </div>
               
               <div>
-                <label className="block text-white/80 text-sm font-medium mb-2">Message</label>
+                <label className="block text-white/80 text-sm font-bold mb-2">Message</label>
                 <textarea
                   rows={4}
                   className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:outline-none focus:border-cyan-300 transition-colors resize-none"

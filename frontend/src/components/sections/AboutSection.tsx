@@ -16,7 +16,7 @@ const AboutSection = () => {
               style={{ fontFamily: '"Arial Black", "Helvetica Neue", Arial, sans-serif', fontWeight: 900, letterSpacing: '-0.02em' }}>
             About LSCA
           </h2>
-          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed font-bold">
             The Laurier Supply Chain Association is dedicated to connecting students with the dynamic world of supply chain management through education, networking, and professional development.
           </p>
         </motion.div>
@@ -56,7 +56,7 @@ const AboutSection = () => {
                 <item.icon size={48} />
               </div>
               <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-              <p className="text-white/80">{item.description}</p>
+              <p className="text-white/80 font-bold">{item.description}</p>
             </motion.div>
           ))}
         </div>
