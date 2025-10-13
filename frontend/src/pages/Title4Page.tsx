@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Title4Page = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 py-20">
