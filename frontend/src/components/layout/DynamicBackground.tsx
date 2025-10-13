@@ -30,7 +30,7 @@ const DynamicBackground = () => {
   // Calculate which section we're in (6 sections total)
   const sectionHeight = windowHeight
   const currentSection = Math.floor(scrollY / sectionHeight)
-  const sectionProgress = (scrollY % sectionHeight) / sectionHeight
+  // const sectionProgress = (scrollY % sectionHeight) / sectionHeight
 
   // Define color schemes for each section
   const colorSchemes = [
@@ -50,7 +50,7 @@ const DynamicBackground = () => {
 
   // Get current and next color schemes
   const currentScheme = colorSchemes[Math.min(currentSection, colorSchemes.length - 1)]
-  const nextScheme = colorSchemes[Math.min(currentSection + 1, colorSchemes.length - 1)]
+  // const nextScheme = colorSchemes[Math.min(currentSection + 1, colorSchemes.length - 1)]
 
   // Interpolate between current and next scheme based on scroll progress
   const getGradientClass = () => {
@@ -94,7 +94,7 @@ const DynamicBackground = () => {
       </div>
       
       {/* Add CSS animation for grid movement */}
-      <style jsx>{`
+      <style>{`
         @keyframes gridMove {
           0% { transform: translate(0, 0); }
           100% { transform: translate(60px, 60px); }
