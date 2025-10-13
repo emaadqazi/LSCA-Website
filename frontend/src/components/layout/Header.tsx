@@ -28,7 +28,7 @@ const Header = () => {
           <span>LSCA</span>
         </button>
 
-        {/* Navigation Links */}
+        {/* Navigation Links - Centered */}
         <nav className="flex space-x-8">
           <button 
             onClick={() => scrollToSection('about')}
@@ -67,14 +67,9 @@ const Header = () => {
           </button>
         </nav>
 
-        {/* CTA Button */}
-        <button 
-          onClick={() => scrollToSection('get-involved')}
-          className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border border-white/30 px-6 py-2 rounded-lg transition-all duration-300 font-black hover:scale-105 transform shadow-lg" 
-          style={{ fontFamily: '"Arial Black", "Helvetica Neue", Arial, sans-serif', fontWeight: 900, letterSpacing: '-0.02em' }}
-        >
-          Get Started
-        </button>
+        {/* Empty div to balance the layout */}
+        <div className="w-40"></div>
+
       </div>
     </header>
   )

@@ -391,7 +391,7 @@ const HeroSection = () => {
               >
                 <Globe size={40} />
               </motion.div>
-              <div className="text-4xl font-bold text-white mb-2">174+</div>
+              <div className="text-4xl font-bold text-white mb-2">20+</div>
               <div className="text-white/80 font-bold">Members</div>
             </motion.div>
             
@@ -407,7 +407,7 @@ const HeroSection = () => {
               >
                 <Layers size={40} />
               </motion.div>
-              <div className="text-4xl font-bold text-white mb-2">50+</div>
+              <div className="text-4xl font-bold text-white mb-2">5+</div>
               <div className="text-white/80 font-bold">Events Annually</div>
             </motion.div>
             
