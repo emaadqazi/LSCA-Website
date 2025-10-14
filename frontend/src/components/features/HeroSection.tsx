@@ -408,7 +408,7 @@ const HeroSection = () => {
                 <Layers size={40} />
               </motion.div>
               <div className="text-4xl font-bold text-white mb-2">5+</div>
-              <div className="text-white/80 font-bold">Events Annually</div>
+              <div className="text-white/80 font-bold">Events Per Term</div>
             </motion.div>
             
             <motion.div 

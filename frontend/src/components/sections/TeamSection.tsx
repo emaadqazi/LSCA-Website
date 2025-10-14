@@ -13,7 +13,7 @@ const TeamSection = () => {
           name: "Brady Kuzma",
           role: "Co-President",
           yearMajor: "3rd Year BBA/BSc Student",
-          image: "./images/MembersPFP/VPs/BradyKuzma.png",
+          image: "/LSCA-Website/images/MembersPFP/VPs/BradyKuzma.png",
           linkedin: "https://www.linkedin.com/in/brady-kuzma/",
           email: "brady.kuzma@lsca.ca"
         },
@@ -21,7 +21,7 @@ const TeamSection = () => {
           name: "Konstance Vondouris",
           role: "Co-President",
           yearMajor: "3rd Year BBA Student",
-          image: "./images/MembersPFP/VPs/KonstanceVondouris.png",
+          image: "/LSCA-Website/images/MembersPFP/VPs/KonstanceVondouris.png",
           linkedin: "https://www.linkedin.com/in/konstance-voudouris-628003291/",
           email: "konstance.vondouris@lsca.ca"
         },
@@ -29,7 +29,7 @@ const TeamSection = () => {
           name: "Ben Maycock",
           role: "Executive VP",
           yearMajor: "3rd Year BBA Student",
-          image: "./images/MembersPFP/VPs/BenMaycock.png",
+          image: "/LSCA-Website/images/MembersPFP/VPs/BenMaycock.png",
           linkedin: "https://www.linkedin.com/in/ben-maycock-56a84b29b/",
           email: "ben.maycock@lsca.ca"
         },
@@ -37,7 +37,7 @@ const TeamSection = () => {
           name: "Ewan Macneil",
           role: "Senior Advisor",
           yearMajor: "4th Year BBA Student",
-          image: "./images/MembersPFP/VPs/EwanMacneil.png",
+          image: "/LSCA-Website/images/MembersPFP/VPs/EwanMacneil.png",
           linkedin: "https://www.linkedin.com/in/ewanmacneil/",
           email: "ewan.macneil@lsca.ca"
         }
@@ -50,7 +50,7 @@ const TeamSection = () => {
           name: "Chris Weng",
           role: "VP of Marketing",
           yearMajor: "2nd Year BBA/BMath (UW)",
-          image: "./images/MembersPFP/VPs/ChrisWeng.png",
+          image: "/LSCA-Website/images/MembersPFP/VPs/ChrisWeng.png",
           linkedin: "https://www.linkedin.com/in/chris-weng-intern/",
           email: "chris.weng@lsca.ca"
         }
@@ -63,7 +63,7 @@ const TeamSection = () => {
           name: "Evika Trinidade",
           role: "VP of Internal",
           yearMajor: "4th Year BBA Student",
-          image: "./images/MembersPFP/VPs/EvikaTrinidade.png",
+          image: "/LSCA-Website/images/MembersPFP/VPs/EvikaTrinidade.png",
           linkedin: "https://www.linkedin.com/in/evika-trinidade/",
           email: "evika.trinidade@lsca.ca"
         }
@@ -76,7 +76,7 @@ const TeamSection = () => {
           name: "Hailey Krywiak",
           role: "Co-VP of Events",
           yearMajor: "3rd Year BBA Student",
-          image: "./images/MembersPFP/VPs/HaileyKrywiak.png",
+          image: "/LSCA-Website/images/MembersPFP/VPs/HaileyKrywiak.png",
           linkedin: "https://www.linkedin.com/in/hailey-krywiak-4ba971303/",
           email: "hailey.krywiak@lsca.ca"
         },
@@ -84,7 +84,7 @@ const TeamSection = () => {
           name: "Brayden Greekamol",
           role: "Co-VP of Events",
           yearMajor: "3rd Year BBA Student",
-          image: "./images/MembersPFP/VPs/BraydenGreekamol.png",
+          image: "/LSCA-Website/images/MembersPFP/VPs/BraydenGreekamol.png",
           linkedin: "https://www.linkedin.com/in/brayden-greekamol/",
           email: "brayden.greekamol@lsca.ca"
         }
@@ -97,7 +97,7 @@ const TeamSection = () => {
           name: "Emaad Qazi",
           role: "VP of Software Development",
           yearMajor: "3rd Year BBA/BSc Student",
-          image: "./images/MembersPFP/VPs/EmaadQazi.png",
+          image: "/LSCA-Website/images/MembersPFP/VPs/EmaadQazi.png",
           linkedin: "https://www.linkedin.com/in/emaadqazi/",
           email: "emaad.qazi@lsca.ca"
         }
@@ -110,7 +110,7 @@ const TeamSection = () => {
           name: "Zanir Khot",
           role: "VP of Finance",
           yearMajor: "3rd Year BBA Student",
-          image: "./images/MembersPFP/VPs/ZanirKhot.png",
+          image: "/LSCA-Website/images/MembersPFP/VPs/ZanirKhot.png",
           linkedin: "https://www.linkedin.com/in/zanirkhot/",
           email: "zanir.khot@lsca.ca"
         }
@@ -123,7 +123,7 @@ const TeamSection = () => {
           name: "Abira Selim",
           role: "VP of Corporate Relations",
           yearMajor: "4th Year BBA Student",
-          image: "./images/MembersPFP/VPs/AbiraSelim.png",
+          image: "/LSCA-Website/images/MembersPFP/VPs/AbiraSelim.png",
           linkedin: "https://www.linkedin.com/in/abiraselim2004/",
           email: "abira.selim@lsca.ca"
         }
@@ -136,7 +136,7 @@ const TeamSection = () => {
           name: "Afnan Shan",
           role: "VP of Education",
           yearMajor: "3rd Year BBA Student",
-          image: "./images/MembersPFP/VPs/AfnanShan.png",
+          image: "/LSCA-Website/images/MembersPFP/VPs/AfnanShan.png",
           linkedin: "https://www.linkedin.com/in/afnanshan/",
           email: "afnan.shan@lsca.ca"
         }
