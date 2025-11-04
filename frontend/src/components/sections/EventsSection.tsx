@@ -1,7 +1,10 @@
-import { motion } from 'framer-motion'
-import { Calendar, MapPin, Clock, Users } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Calendar, MapPin, Clock, Users, X, Mic } from 'lucide-react'
+import { useState } from 'react'
 
 const EventsSection = () => {
+  const [selectedEvent, setSelectedEvent] = useState<number | null>(null)
+
   const events = [
     {
       title: "Supply Chain Innovation Summit",
@@ -9,7 +12,15 @@ const EventsSection = () => {
       time: "6:00 PM - 9:00 PM",
       location: "Laurier Campus",
       attendees: "150+",
-      description: "Join industry leaders as they discuss the latest trends in supply chain innovation and digital transformation."
+      description: "Join industry leaders as they discuss the latest trends in supply chain innovation and digital transformation.",
+      fullDescription: "An exciting evening of insights into the future of supply chain management. Industry leaders will share their experiences with digital transformation, AI integration, and sustainable supply chain practices. This summit brings together students, professionals, and academics to explore cutting-edge innovations shaping the industry.",
+      speakers: [
+        { name: "John Smith", title: "VP of Supply Chain, Amazon", photo: "" },
+        { name: "Sarah Johnson", title: "Director of Logistics, Walmart", photo: "" },
+        { name: "Michael Chen", title: "Chief Operations Officer, FedEx", photo: "" },
+        { name: "Emily Rodriguez", title: "Supply Chain Consultant, McKinsey", photo: "" },
+        { name: "David Park", title: "Founder, LogisticsTech Startup", photo: "" }
+      ]
     },
     {
       title: "Networking Mixer with Industry Professionals",
@@ -17,7 +28,11 @@ const EventsSection = () => {
       time: "7:00 PM - 10:00 PM",
       location: "Waterloo Convention Centre",
       attendees: "200+",
-      description: "Connect with supply chain professionals from leading companies in an informal networking setting."
+      description: "Connect with supply chain professionals from leading companies in an informal networking setting.",
+      fullDescription: "An informal evening designed to connect students with industry professionals. This mixer provides an excellent opportunity to build relationships, learn about career paths, and discover internship opportunities. Food and refreshments will be provided.",
+      speakers: [
+        { name: "Various Professionals", title: "From leading supply chain companies", photo: "" }
+      ]
     },
     {
       title: "Case Study Competition",
@@ -25,7 +40,11 @@ const EventsSection = () => {
       time: "9:00 AM - 5:00 PM",
       location: "Laurier Business School",
       attendees: "80+",
-      description: "Test your problem-solving skills in our annual case study competition with real-world supply chain challenges."
+      description: "Test your problem-solving skills in our annual case study competition with real-world supply chain challenges.",
+      fullDescription: "Our flagship competition where teams of students tackle real-world supply chain challenges. Participants will analyze complex scenarios, develop strategic solutions, and present their findings to a panel of industry judges. Prizes awarded to top teams, plus networking opportunities with sponsors.",
+      speakers: [
+        { name: "Industry Judges Panel", title: "Representatives from sponsoring companies", photo: "" }
+      ]
     }
   ]
 
@@ -42,9 +61,6 @@ const EventsSection = () => {
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
             Recent <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-300">Events</span>
           </h2>
-          <p className="text-xl md:text-2xl text-navy-100/80 max-w-4xl mx-auto leading-relaxed font-light">
-            Stay connected with our latest events, workshops, and networking opportunities designed to advance your supply chain career.
-          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -56,7 +72,8 @@ const EventsSection = () => {
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="group bg-navy-800/40 backdrop-blur-md rounded-2xl p-6 border border-teal-400/20 hover:border-teal-400/40 hover:shadow-xl hover:shadow-teal-400/10 transition-all duration-300"
+              onClick={() => setSelectedEvent(index)}
+              className="group bg-navy-800/40 backdrop-blur-md rounded-2xl p-6 border border-teal-400/20 hover:border-teal-400/40 hover:shadow-xl hover:shadow-teal-400/10 transition-all duration-300 cursor-pointer"
             >
               <div className="mb-6">
                 <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-teal-400 transition-colors">{event.title}</h3>
@@ -81,10 +98,141 @@ const EventsSection = () => {
                   <span className="text-navy-100/80 text-sm">{event.attendees} attendees</span>
                 </div>
               </div>
+
+              <div className="mt-4 pt-4 border-t border-teal-400/10">
+                <button className="text-teal-400 text-sm font-medium hover:text-teal-300 transition-colors">
+                  View Details →
+                </button>
+              </div>
             </motion.div>
           ))}
         </div>
       </div>
+
+      {/* Event Detail Modal */}
+      <AnimatePresence>
+        {selectedEvent !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedEvent(null)}
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-navy-800/95 backdrop-blur-xl rounded-3xl max-w-3xl w-full border border-teal-400/30 shadow-2xl max-h-[70vh] overflow-hidden relative"
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedEvent(null)}
+                className="absolute top-4 right-4 md:top-6 md:right-6 text-white/60 hover:text-white transition-colors z-10"
+              >
+                <X size={24} strokeWidth={2} />
+              </button>
+
+              {/* Scrollable Content Container */}
+              <div 
+                className="overflow-y-auto custom-scrollbar p-6 md:p-8 max-h-[70vh]"
+                style={{
+                  scrollbarWidth: 'thin',
+                  scrollbarColor: 'rgba(20, 184, 166, 0.4) transparent'
+                }}
+              >
+                {/* Event Content */}
+                <div className="space-y-6 pr-2">
+                {/* Header */}
+                <div className="pr-8">
+                  <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                    {events[selectedEvent].title}
+                  </h2>
+                  <p className="text-base md:text-lg text-navy-100/80 leading-relaxed">
+                    {events[selectedEvent].fullDescription}
+                  </p>
+                </div>
+
+                {/* Event Details Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-5 border-y border-teal-400/20">
+                  <div className="flex items-center space-x-4">
+                    <div className="bg-teal-500/20 p-3 rounded-xl">
+                      <Calendar className="text-teal-400" size={24} strokeWidth={2} />
+                    </div>
+                    <div>
+                      <p className="text-white/60 text-sm">Date</p>
+                      <p className="text-white font-medium">{events[selectedEvent].date}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center space-x-4">
+                    <div className="bg-teal-500/20 p-3 rounded-xl">
+                      <Clock className="text-teal-400" size={24} strokeWidth={2} />
+                    </div>
+                    <div>
+                      <p className="text-white/60 text-sm">Time</p>
+                      <p className="text-white font-medium">{events[selectedEvent].time}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center space-x-4">
+                    <div className="bg-teal-500/20 p-3 rounded-xl">
+                      <MapPin className="text-teal-400" size={24} strokeWidth={2} />
+                    </div>
+                    <div>
+                      <p className="text-white/60 text-sm">Location</p>
+                      <p className="text-white font-medium">{events[selectedEvent].location}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center space-x-4">
+                    <div className="bg-teal-500/20 p-3 rounded-xl">
+                      <Users className="text-teal-400" size={24} strokeWidth={2} />
+                    </div>
+                    <div>
+                      <p className="text-white/60 text-sm">Attendees</p>
+                      <p className="text-white font-medium">{events[selectedEvent].attendees}</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Speakers Section */}
+                <div className="pb-2">
+                  <div className="flex items-center space-x-3 mb-4">
+                    <Mic className="text-teal-400" size={24} strokeWidth={2} />
+                    <h3 className="text-xl md:text-2xl font-bold text-white">Speakers</h3>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 gap-3">
+                    {events[selectedEvent].speakers.map((speaker, idx) => (
+                      <div
+                        key={idx}
+                        className="bg-navy-900/50 rounded-xl p-4 border border-teal-400/20 hover:border-teal-400/40 transition-colors"
+                      >
+                        <div className="flex items-center space-x-3">
+                          {/* Placeholder avatar */}
+                          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center flex-shrink-0">
+                            <span className="text-white font-bold text-base">
+                              {speaker.name.charAt(0)}
+                            </span>
+                          </div>
+                          
+                          <div>
+                            <h4 className="text-white font-bold text-base mb-0.5">{speaker.name}</h4>
+                            <p className="text-navy-100/70 text-sm">{speaker.title}</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   )
 }
