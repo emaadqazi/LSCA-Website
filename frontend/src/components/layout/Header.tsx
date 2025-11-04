@@ -1,3 +1,5 @@
+import { Linkedin, Instagram, Slack } from 'lucide-react'
+
 const scrollToSection = (sectionId: string) => {
   const element = document.getElementById(sectionId)
   if (element) {
@@ -21,6 +23,7 @@ const Header = () => {
               className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-110"
               style={{
                 filter: 'brightness(1.2) contrast(1.1)',
+                mixBlendMode: 'lighten',
               }}
             />
             <div className="absolute inset-0 bg-teal-500/20 rounded-lg blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -67,8 +70,36 @@ const Header = () => {
           </button>
         </nav>
 
-        {/* Empty div to balance the layout */}
-        <div className="w-40"></div>
+        {/* Social Media Links */}
+        <div className="flex items-center space-x-4">
+          <a 
+            href="https://www.linkedin.com/company/lauriersupplychainassociation/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-white/70 hover:text-teal-500 transition-all duration-300 hover:scale-110 transform"
+            aria-label="LinkedIn"
+          >
+            <Linkedin size={22} strokeWidth={2} />
+          </a>
+          <a 
+            href="https://www.instagram.com/lauriersupplychain/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-white/70 hover:text-teal-500 transition-all duration-300 hover:scale-110 transform"
+            aria-label="Instagram"
+          >
+            <Instagram size={22} strokeWidth={2} />
+          </a>
+          <a 
+            href="https://join.slack.com/t/lsca-wlu/shared_invite" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-white/70 hover:text-teal-500 transition-all duration-300 hover:scale-110 transform"
+            aria-label="Slack"
+          >
+            <Slack size={22} strokeWidth={2} />
+          </a>
+        </div>
 
       </div>
     </header>
