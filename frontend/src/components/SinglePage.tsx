@@ -20,28 +20,28 @@ const SinglePage = () => {
   return (
     <div className="relative min-h-screen">
       {/* Professional Navy Gradient Background */}
-      <div className="fixed inset-0 bg-gradient-to-br from-navy-950 via-navy-800 to-navy-900 z-0"></div>
+      <div className="fixed inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 z-0"></div>
       
       {/* Animated Background Overlay */}
       <div className="fixed inset-0 z-0">
-        {/* Subtle gradient orbs */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-teal-400/10 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-navy-500/20 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-teal-500/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '4s' }}></div>
+        {/* Subtle gradient orbs with logo colors */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-teal-500/8 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-teal-600/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-teal-500/8 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '4s' }}></div>
         
         {/* Animated mesh gradient */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-teal-400/5 to-transparent"></div>
-          <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-navy-400/5 to-transparent"></div>
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-teal-500/5 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-teal-600/5 to-transparent"></div>
         </div>
         
-        {/* Subtle grid pattern */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{
+        {/* Subtle grid pattern with logo teal */}
+        <div className="absolute inset-0 opacity-[0.02]" style={{
           backgroundImage: `
-            linear-gradient(to right, #22c9e0 1px, transparent 1px),
-            linear-gradient(to bottom, #22c9e0 1px, transparent 1px)
+            linear-gradient(to right, #14b8a6 1px, transparent 1px),
+            linear-gradient(to bottom, #14b8a6 1px, transparent 1px)
           `,
-          backgroundSize: '80px 80px'
+          backgroundSize: '100px 100px'
         }}></div>
       </div>
       
