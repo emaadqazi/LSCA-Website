@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { Calendar, MapPin, Clock, Users, X, Mic } from 'lucide-react'
+import { Calendar, MapPin, Clock, Users, X, Mic, Linkedin } from 'lucide-react'
 import { useState } from 'react'
 
 const EventsSection = () => {
@@ -7,19 +7,44 @@ const EventsSection = () => {
 
   const events = [
     {
-      title: "Supply Chain Innovation Summit",
-      date: "March 15, 2024",
-      time: "6:00 PM - 9:00 PM",
-      location: "Laurier Campus",
+      title: "Careers in Supply Chain Speaker Panel",
+      date: "October 6th, 2025",
+      time: "7:00PM to 9:00PM",
+      location: "Lazaridis, LH2064",
       attendees: "150+",
-      description: "Join industry leaders as they discuss the latest trends in supply chain innovation and digital transformation.",
-      fullDescription: "An exciting evening of insights into the future of supply chain management. Industry leaders will share their experiences with digital transformation, AI integration, and sustainable supply chain practices. This summit brings together students, professionals, and academics to explore cutting-edge innovations shaping the industry.",
+      description: "Join us as 5 speakers share their insights and experiences working in the Supply Chain Industry",
+      fullDescription: "You will have the chance to hear 5 industry preofessionals speak about their experience working in Supply Chain. We have speakers from all backgrounds, whether that be academia, the liquor industry, consulting, and more. Join us for an event of networking and learning more about the Supply Chain Industry.",
       speakers: [
-        { name: "John Smith", title: "VP of Supply Chain, Amazon", photo: "" },
-        { name: "Sarah Johnson", title: "Director of Logistics, Walmart", photo: "" },
-        { name: "Michael Chen", title: "Chief Operations Officer, FedEx", photo: "" },
-        { name: "Emily Rodriguez", title: "Supply Chain Consultant, McKinsey", photo: "" },
-        { name: "David Park", title: "Founder, LogisticsTech Startup", photo: "" }
+        { 
+          name: "Blessing Ukiri", 
+          title: "Supply Chain & Operations at EY", 
+          photo: "/images/SpeakersPFP/Blessing-Ukiri.jpeg", 
+          linkedin: "https://www.linkedin.com/in/blessingukiri/" 
+        },
+        { 
+          name: "Kunal Sheel", 
+          title: "Sr. IT Analyst, Supply Chain, at Honey Well", 
+          photo: "/images/SpeakersPFP/Kunal-Sheel.jpeg", 
+          linkedin: "https://www.linkedin.com/in/kunalsheel/" 
+        },
+        { 
+          name: "Micheal Haughton", 
+          title: "Program Director of Supply Chain Management at Laurier", 
+          photo: "/images/SpeakersPFP/Micheal-Haughton.jpeg", 
+          linkedin: "https://www.linkedin.com/in/michael-haughton-99395a3a/" 
+        },
+        { 
+          name: "Andaleeb Syed Dobson", 
+          title: "Inventory Planning/Supply Chain Strategy at LCBO", 
+          photo: "/images/SpeakersPFP/Andaleeb-Syed-Dobson.jpeg", 
+          linkedin: "https://www.linkedin.com/in/andaleeb-syed-dobson/" 
+        },
+        { 
+          name: "Redwan Siddiqui", 
+          title: "Professor in Supply Chain Management", 
+          photo: "/images/SpeakersPFP/Redwan-Siddiqui.jpeg", 
+          linkedin: "https://www.linkedin.com/in/redwan/" 
+        }
       ]
     },
     {
@@ -210,18 +235,53 @@ const EventsSection = () => {
                         key={idx}
                         className="bg-navy-900/50 rounded-xl p-4 border border-teal-400/20 hover:border-teal-400/40 transition-colors"
                       >
-                        <div className="flex items-center space-x-3">
-                          {/* Placeholder avatar */}
-                          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center flex-shrink-0">
-                            <span className="text-white font-bold text-base">
-                              {speaker.name.charAt(0)}
-                            </span>
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center space-x-4 flex-1">
+                            {/* Speaker avatar */}
+                            <div className="relative w-16 h-16 flex-shrink-0">
+                              {speaker.photo ? (
+                                <img 
+                                  src={speaker.photo.split('/').map((part, i) => i === speaker.photo.split('/').length - 1 ? encodeURIComponent(part) : part).join('/')}
+                                  alt={speaker.name}
+                                  className="w-full h-full rounded-full object-cover ring-2 ring-teal-400/40"
+                                  onError={(e) => {
+                                    e.currentTarget.style.display = 'none';
+                                    const parent = e.currentTarget.parentElement;
+                                    if (parent) {
+                                      const fallback = parent.querySelector('.avatar-fallback');
+                                      if (fallback) fallback.style.display = 'flex';
+                                    }
+                                  }}
+                                />
+                              ) : null}
+                              <div 
+                                className={`w-full h-full rounded-full bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center ring-2 ring-teal-400/40 ${speaker.photo ? 'hidden avatar-fallback' : ''}`}
+                              >
+                                <span className="text-white font-bold text-lg">
+                                  {speaker.name.charAt(0)}
+                                </span>
+                              </div>
+                            </div>
+                            
+                            <div className="flex-1 min-w-0">
+                              <h4 className="text-white font-bold text-base mb-1">{speaker.name}</h4>
+                              <p className="text-navy-100/70 text-sm leading-snug">{speaker.title}</p>
+                            </div>
                           </div>
                           
-                          <div>
-                            <h4 className="text-white font-bold text-base mb-0.5">{speaker.name}</h4>
-                            <p className="text-navy-100/70 text-sm">{speaker.title}</p>
-                          </div>
+                          {/* LinkedIn link */}
+                          {speaker.linkedin && (
+                            <a
+                              href={speaker.linkedin}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                              className="text-teal-400/70 hover:text-teal-400 hover:scale-110 transition-all ml-4 flex-shrink-0"
+                              aria-label={`${speaker.name}'s LinkedIn`}
+                            >
+                              <Linkedin size={22} strokeWidth={2} />
+                            </a>
+                          )}
                         </div>
                       </div>
                     ))}
