@@ -12,16 +12,15 @@ const AboutSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-black text-white mb-8 leading-tight" 
-              style={{ fontFamily: '"Arial Black", "Helvetica Neue", Arial, sans-serif', fontWeight: 900, letterSpacing: '-0.02em' }}>
-            About LSCA
+          <h2 className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
+            About <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-300">LSCA</span>
           </h2>
-          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed font-bold">
+          <p className="text-xl md:text-2xl text-navy-100/80 max-w-4xl mx-auto leading-relaxed font-light">
             The Laurier Supply Chain Association is dedicated to connecting students with the dynamic world of supply chain management through education, networking, and professional development.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             {
               icon: Target,
@@ -50,13 +49,14 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 text-center hover:bg-white/15 transition-all duration-300"
+              whileHover={{ y: -5, scale: 1.02 }}
+              className="group bg-navy-800/40 backdrop-blur-md rounded-2xl p-6 border border-teal-400/20 text-center hover:border-teal-400/40 hover:shadow-xl hover:shadow-teal-400/10 transition-all duration-300"
             >
-              <div className="text-cyan-300 mb-4 flex justify-center">
-                <item.icon size={48} />
+              <div className="text-teal-400 mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
+                <item.icon size={48} strokeWidth={1.5} />
               </div>
               <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-              <p className="text-white/80 font-bold">{item.description}</p>
+              <p className="text-navy-100/70 font-normal">{item.description}</p>
             </motion.div>
           ))}
         </div>

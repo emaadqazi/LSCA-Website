@@ -162,12 +162,11 @@ const TeamSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-black text-white mb-8 leading-tight" 
-              style={{ fontFamily: '"Arial Black", "Helvetica Neue", Arial, sans-serif', fontWeight: 900, letterSpacing: '-0.02em' }}>
-            Meet the Team
+          <h2 className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
+            Meet the <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-300">Team</span>
           </h2>
-          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed font-bold">
-            Get to the know the LSCA team, consisting of 12 VPS and 15+ Directors accross 8 portfolios!
+          <p className="text-xl md:text-2xl text-navy-100/80 max-w-4xl mx-auto leading-relaxed font-light">
+            Get to know the LSCA team, consisting of 12 VPs and 15+ Directors across 8 portfolios!
           </p>
         </motion.div>
 
@@ -177,7 +176,7 @@ const TeamSection = () => {
             onClick={prevPortfolio}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all duration-300 mr-6"
+            className="p-3 rounded-full bg-navy-800/40 backdrop-blur-md border border-teal-400/20 text-teal-400 hover:border-teal-400/40 hover:bg-navy-800/60 transition-all duration-300 mr-6"
           >
             <ChevronLeft size={24} />
           </motion.button>
@@ -189,10 +188,10 @@ const TeamSection = () => {
                 onClick={() => setActivePortfolio(index)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
+                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                   activePortfolio === index
-                    ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg'
-                    : 'bg-white/10 backdrop-blur-sm border border-white/20 text-white/80 hover:bg-white/20'
+                    ? 'bg-gradient-to-r from-teal-500 to-teal-400 text-white shadow-lg shadow-teal-500/30'
+                    : 'bg-navy-800/40 backdrop-blur-md border border-teal-400/20 text-navy-100/80 hover:border-teal-400/40'
                 }`}
               >
                 {portfolio.name}
@@ -204,7 +203,7 @@ const TeamSection = () => {
             onClick={nextPortfolio}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all duration-300 ml-6"
+            className="p-3 rounded-full bg-navy-800/40 backdrop-blur-md border border-teal-400/20 text-teal-400 hover:border-teal-400/40 hover:bg-navy-800/60 transition-all duration-300 ml-6"
           >
             <ChevronRight size={24} />
           </motion.button>
@@ -219,7 +218,7 @@ const TeamSection = () => {
           className="text-center"
         >
           <div className="mb-12">
-            <h3 className="text-5xl font-black mb-4 bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
+            <h3 className="text-5xl font-bold mb-4 bg-gradient-to-r from-teal-400 to-teal-300 bg-clip-text text-transparent">
               {portfolios[activePortfolio].name}
             </h3>
           </div>
@@ -243,25 +242,26 @@ const TeamSection = () => {
                 className="text-center group flex flex-col items-center"
               >
                 {/* Large Profile Picture */}
-                <div className="mb-6">
+                <div className="mb-6 relative">
+                  <div className="absolute inset-0 bg-teal-400/20 rounded-full blur-2xl group-hover:bg-teal-400/30 transition-all duration-300"></div>
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-96 h-96 md:w-[28rem] md:h-[28rem] rounded-full mx-auto object-cover border-4 border-white/20 shadow-lg group-hover:border-cyan-300/50 transition-all duration-300"
+                    className="relative w-96 h-96 md:w-[28rem] md:h-[28rem] rounded-full mx-auto object-cover border-4 border-teal-400/30 shadow-xl group-hover:border-teal-400/50 transition-all duration-300"
                   />
                 </div>
                 
                 {/* Text Content Container with Fixed Height */}
                 <div className="flex flex-col items-center justify-center min-h-[120px] w-full">
                   {/* Name */}
-                  <h5 className="text-2xl md:text-3xl font-bold text-white mb-3 leading-tight">{member.name}</h5>
+                  <h5 className="text-2xl md:text-3xl font-bold text-white mb-3 leading-tight group-hover:text-teal-400 transition-colors">{member.name}</h5>
                   
                   {/* Role */}
-                  <p className="text-white font-medium mb-2 text-xl leading-tight min-h-[28px] flex items-center justify-center">{member.role}</p>
+                  <p className="text-navy-100/90 font-medium mb-2 text-xl leading-tight min-h-[28px] flex items-center justify-center">{member.role}</p>
                   
                   {/* Year/Major */}
                   {member.yearMajor && (
-                    <p className="text-white/70 mb-4 text-base font-bold leading-tight min-h-[24px] flex items-center justify-center text-center">{member.yearMajor}</p>
+                    <p className="text-navy-100/60 mb-4 text-base font-normal leading-tight min-h-[24px] flex items-center justify-center text-center">{member.yearMajor}</p>
                   )}
                 </div>
                 
@@ -269,7 +269,7 @@ const TeamSection = () => {
                 <motion.a
                   href={member.linkedin}
                   whileHover={{ scale: 1.1 }}
-                  className="inline-flex items-center text-white/60 hover:text-white transition-colors mt-2"
+                  className="inline-flex items-center text-teal-400/60 hover:text-teal-400 transition-colors mt-2"
                 >
                   <Linkedin size={20} />
                 </motion.a>

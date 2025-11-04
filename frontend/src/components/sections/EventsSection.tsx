@@ -39,16 +39,15 @@ const EventsSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-black text-white mb-8 leading-tight" 
-              style={{ fontFamily: '"Arial Black", "Helvetica Neue", Arial, sans-serif', fontWeight: 900, letterSpacing: '-0.02em' }}>
-            Recent Events
+          <h2 className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
+            Recent <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-300">Events</span>
           </h2>
-          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed font-bold">
+          <p className="text-xl md:text-2xl text-navy-100/80 max-w-4xl mx-auto leading-relaxed font-light">
             Stay connected with our latest events, workshops, and networking opportunities designed to advance your supply chain career.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {events.map((event, index) => (
             <motion.div
               key={index}
@@ -56,29 +55,30 @@ const EventsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300"
+              whileHover={{ y: -8, scale: 1.02 }}
+              className="group bg-navy-800/40 backdrop-blur-md rounded-2xl p-6 border border-teal-400/20 hover:border-teal-400/40 hover:shadow-xl hover:shadow-teal-400/10 transition-all duration-300"
             >
-              <div className="mb-4">
-                <h3 className="text-2xl font-bold text-white mb-3">{event.title}</h3>
-                <p className="text-white/80 mb-4 font-bold">{event.description}</p>
+              <div className="mb-6">
+                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-teal-400 transition-colors">{event.title}</h3>
+                <p className="text-navy-100/70 mb-4 font-normal leading-relaxed">{event.description}</p>
               </div>
               
-              <div className="space-y-3">
-                <div className="flex items-center text-cyan-300">
-                  <Calendar size={20} className="mr-3" />
-                  <span className="text-white/90 font-bold">{event.date}</span>
+              <div className="space-y-3 pt-4 border-t border-teal-400/10">
+                <div className="flex items-center">
+                  <Calendar size={18} className="mr-3 text-teal-400" strokeWidth={2} />
+                  <span className="text-navy-100/80 text-sm">{event.date}</span>
                 </div>
-                <div className="flex items-center text-cyan-300">
-                  <Clock size={20} className="mr-3" />
-                  <span className="text-white/90 font-bold">{event.time}</span>
+                <div className="flex items-center">
+                  <Clock size={18} className="mr-3 text-teal-400" strokeWidth={2} />
+                  <span className="text-navy-100/80 text-sm">{event.time}</span>
                 </div>
-                <div className="flex items-center text-cyan-300">
-                  <MapPin size={20} className="mr-3" />
-                  <span className="text-white/90 font-bold">{event.location}</span>
+                <div className="flex items-center">
+                  <MapPin size={18} className="mr-3 text-teal-400" strokeWidth={2} />
+                  <span className="text-navy-100/80 text-sm">{event.location}</span>
                 </div>
-                <div className="flex items-center text-cyan-300">
-                  <Users size={20} className="mr-3" />
-                  <span className="text-white/90 font-bold">{event.attendees} attendees</span>
+                <div className="flex items-center">
+                  <Users size={18} className="mr-3 text-teal-400" strokeWidth={2} />
+                  <span className="text-navy-100/80 text-sm">{event.attendees} attendees</span>
                 </div>
               </div>
             </motion.div>

@@ -3,57 +3,38 @@ import { Package, TruckIcon, Globe, Layers, Factory, Warehouse, Ship, Plane, Bar
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-screen overflow-hidden">
-      {/* Remove duplicate background since we have it in SinglePage */}
-      <div className="absolute inset-0 bg-transparent">
-        {/* Wave-like overlay for depth */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-0 left-0 w-full h-1/4 bg-gradient-to-b from-cyan-100/50 to-transparent"></div>
-          <div className="absolute top-1/4 left-0 w-full h-1/4 bg-gradient-to-b from-teal-200/30 to-transparent"></div>
-          <div className="absolute top-2/4 left-0 w-full h-1/4 bg-gradient-to-b from-blue-300/20 to-transparent"></div>
-          <div className="absolute top-3/4 left-0 w-full h-1/4 bg-gradient-to-b from-blue-400/10 to-transparent"></div>
-        </div>
-        {/* Subtle texture overlay */}
-        <div className="absolute inset-0 opacity-20" style={{
-          backgroundImage: `radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 0%, transparent 50%),
-                           radial-gradient(circle at 75% 75%, rgba(255,255,255,0.05) 0%, transparent 50%)`
-        }}></div>
-      </div>
-      {/* Animated Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `
-            linear-gradient(to right, #60a5fa 1px, transparent 1px),
-            linear-gradient(to bottom, #60a5fa 1px, transparent 1px)
-          `,
-          backgroundSize: '60px 60px'
-        }}></div>
+    <section id="home" className="relative min-h-screen overflow-hidden flex items-center justify-center">
+      {/* Subtle animated particles */}
+      <div className="absolute inset-0 overflow-hidden">
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-teal-400/30 rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              y: [0, -30, 0],
+              opacity: [0.3, 0.6, 0.3],
+            }}
+            transition={{
+              duration: 3 + Math.random() * 4,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }}
+          />
+        ))}
       </div>
 
-      {/* Animated Supply Chain Icons */}
-      <div className="absolute inset-0 overflow-hidden">
+      {/* Animated Supply Chain Icons - More subtle and professional */}
+      <div className="absolute inset-0 overflow-hidden opacity-40">
         {/* Floating Package Icon 1 */}
         <motion.div
-          className="absolute top-20 left-10 text-blue-300 opacity-20"
+          className="absolute top-20 left-10 text-teal-400/30"
           animate={{
-            y: [0, -30, 0],
-            rotate: [0, 10, 0],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        >
-          <Package size={80} />
-        </motion.div>
-
-        {/* Floating Truck Icon */}
-        <motion.div
-          className="absolute top-40 right-20 text-blue-200 opacity-20"
-          animate={{
-            x: [0, 30, 0],
             y: [0, -20, 0],
+            rotate: [0, 5, 0],
           }}
           transition={{
             duration: 8,
@@ -61,63 +42,15 @@ const HeroSection = () => {
             ease: "easeInOut"
           }}
         >
-          <TruckIcon size={100} />
+          <Package size={60} strokeWidth={1.5} />
         </motion.div>
 
-        {/* Floating Globe Icon */}
+        {/* Floating Truck Icon */}
         <motion.div
-          className="absolute bottom-40 left-1/4 text-blue-300 opacity-20"
+          className="absolute top-40 right-20 text-navy-300/40"
           animate={{
-            rotate: [0, 360],
-            scale: [1, 1.1, 1],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        >
-          <Globe size={90} />
-        </motion.div>
-
-        {/* Floating Layers Icon */}
-        <motion.div
-          className="absolute top-1/2 right-1/4 text-blue-200 opacity-20"
-          animate={{
-            y: [0, -40, 0],
-          }}
-          transition={{
-            duration: 7,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        >
-          <Layers size={70} />
-        </motion.div>
-
-        {/* Floating Package Icon 2 */}
-        <motion.div
-          className="absolute bottom-20 right-40 text-blue-300 opacity-20"
-          animate={{
-            x: [0, -20, 0],
-            y: [0, 30, 0],
-            rotate: [0, -15, 0],
-          }}
-          transition={{
-            duration: 9,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        >
-          <Package size={60} />
-        </motion.div>
-
-        {/* Floating Factory Icon */}
-        <motion.div
-          className="absolute top-60 left-1/3 text-blue-200 opacity-15"
-          animate={{
-            scale: [1, 1.2, 1],
-            rotate: [0, 5, 0],
+            x: [0, 20, 0],
+            y: [0, -15, 0],
           }}
           transition={{
             duration: 10,
@@ -125,31 +58,44 @@ const HeroSection = () => {
             ease: "easeInOut"
           }}
         >
-          <Factory size={85} />
+          <TruckIcon size={70} strokeWidth={1.5} />
         </motion.div>
 
-        {/* Floating Warehouse Icon */}
+        {/* Floating Globe Icon */}
         <motion.div
-          className="absolute bottom-60 left-20 text-blue-300 opacity-15"
+          className="absolute bottom-40 left-1/4 text-teal-400/30"
           animate={{
-            y: [0, -25, 0],
-            x: [0, 15, 0],
+            rotate: [0, 360],
           }}
           transition={{
-            duration: 12,
+            duration: 30,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        >
+          <Globe size={65} strokeWidth={1.5} />
+        </motion.div>
+
+        {/* Floating Layers Icon */}
+        <motion.div
+          className="absolute top-1/2 right-1/4 text-navy-300/40"
+          animate={{
+            y: [0, -25, 0],
+          }}
+          transition={{
+            duration: 9,
             repeat: Infinity,
             ease: "easeInOut"
           }}
         >
-          <Warehouse size={75} />
+          <Layers size={55} strokeWidth={1.5} />
         </motion.div>
 
         {/* Floating Ship Icon */}
         <motion.div
-          className="absolute top-80 right-1/3 text-blue-200 opacity-15"
+          className="absolute bottom-60 left-20 text-teal-400/30"
           animate={{
-            x: [0, 40, 0],
-            rotate: [0, -10, 0],
+            x: [0, 30, 0],
           }}
           transition={{
             duration: 15,
@@ -157,274 +103,177 @@ const HeroSection = () => {
             ease: "easeInOut"
           }}
         >
-          <Ship size={90} />
+          <Ship size={65} strokeWidth={1.5} />
         </motion.div>
 
-        {/* Floating Plane Icon */}
+        {/* Floating Warehouse Icon */}
         <motion.div
-          className="absolute top-32 left-1/2 text-blue-300 opacity-15"
+          className="absolute top-80 right-1/3 text-navy-300/40"
           animate={{
-            x: [0, -30, 0],
-            y: [0, -15, 0],
-            rotate: [0, 15, 0],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        >
-          <Plane size={70} />
-        </motion.div>
-
-        {/* Floating BarChart Icon */}
-        <motion.div
-          className="absolute bottom-40 left-1/2 text-blue-200 opacity-15"
-          animate={{
-            scale: [1, 1.1, 1],
             y: [0, -20, 0],
+            scale: [1, 1.1, 1],
           }}
           transition={{
-            duration: 6,
+            duration: 12,
             repeat: Infinity,
             ease: "easeInOut"
           }}
         >
-          <BarChart3 size={65} />
-        </motion.div>
-
-        {/* Floating Users Icon */}
-        <motion.div
-          className="absolute top-1/3 right-10 text-blue-300 opacity-15"
-          animate={{
-            rotate: [0, 360],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 18,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        >
-          <Users size={80} />
-        </motion.div>
-
-        {/* Floating Target Icon */}
-        <motion.div
-          className="absolute bottom-1/3 right-1/5 text-blue-200 opacity-15"
-          animate={{
-            scale: [1, 1.3, 1],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: 14,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        >
-          <Target size={55} />
+          <Warehouse size={60} strokeWidth={1.5} />
         </motion.div>
       </div>
 
-      {/* Animated Connection Lines - Supply Chain Network */}
-      <svg className="absolute inset-0 w-full h-full pointer-events-none">
-        {/* Main supply chain flow lines */}
+      {/* Animated Connection Lines - Subtle Supply Chain Network */}
+      <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-30">
         <motion.line
           x1="15%" y1="30%"
           x2="45%" y2="60%"
-          stroke="#60a5fa"
-          strokeWidth="2"
-          opacity="0.15"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
+          stroke="#22c9e0"
+          strokeWidth="1.5"
+          initial={{ pathLength: 0, opacity: 0 }}
+          animate={{ pathLength: 1, opacity: 0.2 }}
+          transition={{ duration: 4, repeat: Infinity, repeatType: "reverse" }}
         />
         <motion.line
           x1="85%" y1="35%"
           x2="55%" y2="55%"
-          stroke="#93c5fd"
-          strokeWidth="2"
-          opacity="0.15"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 4, repeat: Infinity, repeatType: "reverse", delay: 1 }}
+          stroke="#1ca5c1"
+          strokeWidth="1.5"
+          initial={{ pathLength: 0, opacity: 0 }}
+          animate={{ pathLength: 1, opacity: 0.2 }}
+          transition={{ duration: 5, repeat: Infinity, repeatType: "reverse", delay: 1 }}
         />
         <motion.line
           x1="30%" y1="70%"
           x2="75%" y2="75%"
-          stroke="#60a5fa"
-          strokeWidth="2"
-          opacity="0.15"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 5, repeat: Infinity, repeatType: "reverse", delay: 2 }}
-        />
-        
-        {/* Additional network connections */}
-        <motion.line
-          x1="20%" y1="20%"
-          x2="80%" y2="25%"
-          stroke="#3b82f6"
+          stroke="#22c9e0"
           strokeWidth="1.5"
-          opacity="0.1"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 6, repeat: Infinity, repeatType: "reverse", delay: 0.5 }}
-        />
-        <motion.line
-          x1="10%" y1="50%"
-          x2="90%" y2="45%"
-          stroke="#1d4ed8"
-          strokeWidth="1.5"
-          opacity="0.1"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 7, repeat: Infinity, repeatType: "reverse", delay: 1.5 }}
-        />
-        <motion.line
-          x1="25%" y1="80%"
-          x2="70%" y2="85%"
-          stroke="#2563eb"
-          strokeWidth="1.5"
-          opacity="0.1"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 8, repeat: Infinity, repeatType: "reverse", delay: 2.5 }}
-        />
-        
-        {/* Vertical connections */}
-        <motion.line
-          x1="40%" y1="10%"
-          x2="40%" y2="90%"
-          stroke="#60a5fa"
-          strokeWidth="1"
-          opacity="0.08"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 10, repeat: Infinity, repeatType: "reverse", delay: 3 }}
-        />
-        <motion.line
-          x1="60%" y1="15%"
-          x2="60%" y2="85%"
-          stroke="#93c5fd"
-          strokeWidth="1"
-          opacity="0.08"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 12, repeat: Infinity, repeatType: "reverse", delay: 4 }}
-        />
-        
-        {/* Diagonal network lines */}
-        <motion.line
-          x1="5%" y1="15%"
-          x2="95%" y2="85%"
-          stroke="#3b82f6"
-          strokeWidth="1"
-          opacity="0.05"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 15, repeat: Infinity, repeatType: "reverse", delay: 5 }}
-        />
-        <motion.line
-          x1="95%" y1="15%"
-          x2="5%" y2="85%"
-          stroke="#1d4ed8"
-          strokeWidth="1"
-          opacity="0.05"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 18, repeat: Infinity, repeatType: "reverse", delay: 6 }}
+          initial={{ pathLength: 0, opacity: 0 }}
+          animate={{ pathLength: 1, opacity: 0.2 }}
+          transition={{ duration: 6, repeat: Infinity, repeatType: "reverse", delay: 2 }}
         />
       </svg>
 
       {/* Hero Content */}
-      <div className="relative z-10 flex items-center justify-center min-h-screen px-6 py-20">
+      <div className="relative z-10 px-6 py-20">
         <div className="max-w-6xl mx-auto text-center">
 
-          {/* Main Heading with Letter-by-Letter Animation */}
-          <div className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 leading-none tracking-tight">
-            <div className="flex flex-wrap justify-center">
-              {"Laurier Supply Chain Association".split('').map((letter, index) => (
-                <motion.span
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ 
-                    duration: 0.5, 
-                    delay: 0.2 + (index * 0.1),
-                    ease: "easeOut"
-                  }}
-                  className={`inline-block ${
-                    index >= "Laurier Supply Chain".length 
-                      ? "text-transparent bg-clip-text bg-gradient-to-r from-white to-cyan-100" 
-                      : ""
-                  }`}
-                  style={{
-                    fontFamily: '"Arial Black", "Helvetica Neue", Arial, sans-serif',
-                    fontWeight: 900,
-                    letterSpacing: '-0.02em'
-                  }}
-                >
-                  {letter === ' ' ? '\u00A0' : letter}
-                </motion.span>
-              ))}
-            </div>
-          </div>
+          {/* Main Heading - Typewriter Effect */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="mb-8"
+          >
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight">
+              <span className="block">
+                {"Laurier Supply Chain".split("").map((char, index) => (
+                  <motion.span
+                    key={index}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ 
+                      duration: 0.05,
+                      delay: index * 0.10, // 50ms per character
+                      ease: "easeInOut"
+                    }}
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </motion.span>
+                ))}
+              </span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-teal-300 to-navy-200">
+                {"Association".split("").map((char, index) => (
+                  <motion.span
+                    key={index}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ 
+                      duration: 0.05,
+                      delay: (index + 21) * 0.10, // Starts after first line
+                      ease: "easeInOut"
+                    }}
+                  >
+                    {char}
+                  </motion.span>
+                ))}
+              </span>
+            </h1>
+          </motion.div>
+
+          {/* Tagline */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-xl md:text-2xl text-navy-100/80 mb-12 max-w-3xl mx-auto font-light"
+          >
+            Building connections, fostering innovation, and empowering the next generation of supply chain leaders
+          </motion.p>
 
 
-          {/* Stats Section */}
+          {/* Stats Section - Modern Cards */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.8 }}
-            className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
+            transition={{ duration: 1, delay: 0.6 }}
+            className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto"
           >
             <motion.div 
-              className="bg-white/20 backdrop-blur-sm rounded-xl p-6 border border-white/30 relative overflow-hidden shadow-lg"
-              whileHover={{ scale: 1.05, y: -5 }}
+              className="group relative bg-navy-800/50 backdrop-blur-md rounded-2xl p-8 border border-teal-400/20 overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-teal-400/20 transition-all duration-300"
+              whileHover={{ y: -8, scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
+              <div className="absolute inset-0 bg-gradient-to-br from-teal-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <motion.div
-                className="absolute top-2 right-2 text-white/20"
+                className="absolute -top-10 -right-10 text-teal-400/10 group-hover:text-teal-400/20 transition-colors"
                 animate={{ rotate: [0, 360] }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               >
-                <Globe size={40} />
+                <Globe size={120} strokeWidth={1} />
               </motion.div>
-              <div className="text-4xl font-bold text-white mb-2">20+</div>
-              <div className="text-white/80 font-bold">Members</div>
+              <div className="relative">
+                <div className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-teal-300 mb-3">20+</div>
+                <div className="text-navy-100 font-medium text-lg">Members</div>
+              </div>
             </motion.div>
             
             <motion.div 
-              className="bg-white/20 backdrop-blur-sm rounded-xl p-6 border border-white/30 relative overflow-hidden shadow-lg"
-              whileHover={{ scale: 1.05, y: -5 }}
+              className="group relative bg-navy-800/50 backdrop-blur-md rounded-2xl p-8 border border-teal-400/20 overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-teal-400/20 transition-all duration-300"
+              whileHover={{ y: -8, scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
+              <div className="absolute inset-0 bg-gradient-to-br from-teal-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <motion.div
-                className="absolute top-2 right-2 text-white/20"
+                className="absolute -top-10 -right-10 text-teal-400/10 group-hover:text-teal-400/20 transition-colors"
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
               >
-                <Layers size={40} />
+                <Layers size={120} strokeWidth={1} />
               </motion.div>
-              <div className="text-4xl font-bold text-white mb-2">5+</div>
-              <div className="text-white/80 font-bold">Events Per Term</div>
+              <div className="relative">
+                <div className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-teal-300 mb-3">5+</div>
+                <div className="text-navy-100 font-medium text-lg">Events Per Term</div>
+              </div>
             </motion.div>
             
             <motion.div 
-              className="bg-white/20 backdrop-blur-sm rounded-xl p-6 border border-white/30 relative overflow-hidden shadow-lg"
-              whileHover={{ scale: 1.05, y: -5 }}
+              className="group relative bg-navy-800/50 backdrop-blur-md rounded-2xl p-8 border border-teal-400/20 overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-teal-400/20 transition-all duration-300"
+              whileHover={{ y: -8, scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
+              <div className="absolute inset-0 bg-gradient-to-br from-teal-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <motion.div
-                className="absolute top-2 right-2 text-white/20"
-                animate={{ scale: [1, 1.2, 1] }}
+                className="absolute -top-10 -right-10 text-teal-400/10 group-hover:text-teal-400/20 transition-colors"
+                animate={{ scale: [1, 1.1, 1] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               >
-                <Target size={40} />
+                <Target size={120} strokeWidth={1} />
               </motion.div>
-              <div className="text-4xl font-bold text-white mb-2">100%</div>
-              <div className="text-white/80 font-bold">Networking Success</div>
+              <div className="relative">
+                <div className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-teal-300 mb-3">100%</div>
+                <div className="text-navy-100 font-medium text-lg">Networking Success</div>
+              </div>
             </motion.div>
           </motion.div>
         </div>

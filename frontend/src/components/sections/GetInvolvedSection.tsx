@@ -39,16 +39,15 @@ const GetInvolvedSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-black text-white mb-8 leading-tight" 
-              style={{ fontFamily: '"Arial Black", "Helvetica Neue", Arial, sans-serif', fontWeight: 900, letterSpacing: '-0.02em' }}>
-            Get Involved
+          <h2 className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
+            Get <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-300">Involved</span>
           </h2>
-          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed font-bold">
+          <p className="text-xl md:text-2xl text-navy-100/80 max-w-4xl mx-auto leading-relaxed font-light">
             Ready to take your supply chain journey to the next level? Here are the ways you can get involved with LSCA.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {involvementOptions.map((option, index) => (
             <motion.div
               key={index}
@@ -56,17 +55,18 @@ const GetInvolvedSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 group"
+              whileHover={{ y: -8, scale: 1.02 }}
+              className="group bg-navy-800/40 backdrop-blur-md rounded-2xl p-8 border border-teal-400/20 hover:border-teal-400/40 hover:shadow-xl hover:shadow-teal-400/10 transition-all duration-300"
             >
-              <div className="text-cyan-300 mb-6">
-                <option.icon size={48} />
+              <div className="text-teal-400 mb-6 group-hover:scale-110 transition-transform duration-300 inline-block">
+                <option.icon size={48} strokeWidth={1.5} />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">{option.title}</h3>
-              <p className="text-white/80 mb-6 leading-relaxed font-bold">{option.description}</p>
+              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-teal-400 transition-colors">{option.title}</h3>
+              <p className="text-navy-100/70 mb-6 leading-relaxed font-normal">{option.description}</p>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-cyan-500 hover:bg-cyan-400 text-white px-6 py-3 rounded-lg font-bold transition-all duration-300"
+                className="bg-gradient-to-r from-teal-500 to-teal-400 hover:from-teal-400 hover:to-teal-300 text-white px-6 py-3 rounded-lg font-medium shadow-lg shadow-teal-500/20 hover:shadow-teal-400/30 transition-all duration-300"
               >
                 {option.action}
               </motion.button>

@@ -7,63 +7,63 @@ const scrollToSection = (sectionId: string) => {
 
 const Header = () => {
   return (
-    <header className="bg-gradient-to-r from-teal-600 via-blue-600 to-teal-700 text-white py-6 px-8 shadow-lg backdrop-blur-sm">
+    <header className="bg-navy-900/80 backdrop-blur-md text-white py-5 px-8 shadow-xl border-b border-teal-400/10">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo - LSCA */}
         <button 
           onClick={() => scrollToSection('home')}
-          className="flex items-center space-x-3 text-2xl font-black text-white hover:text-cyan-200 transition-colors" 
-          style={{ fontFamily: '"Arial Black", "Helvetica Neue", Arial, sans-serif', fontWeight: 900, letterSpacing: '-0.02em' }}
+          className="flex items-center space-x-3 text-2xl font-bold text-white hover:text-teal-400 transition-all duration-300 group" 
         >
-          <img 
-            src="/LSCA-Website/LSCA Logo.jpeg" 
-            alt="LSCA Logo" 
-            className="h-10 w-auto object-contain"
-            style={{
-              mixBlendMode: 'multiply',
-              filter: 'contrast(1.1) brightness(1.1)',
-              backgroundColor: 'transparent'
-            }}
-          />
-          <span>LSCA</span>
+          <div className="relative">
+            <img 
+              src="/LSCA-Website/LSCA Logo.jpeg" 
+              alt="LSCA Logo" 
+              className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-110"
+              style={{
+                filter: 'brightness(1.2) contrast(1.1)',
+              }}
+            />
+            <div className="absolute inset-0 bg-teal-400/20 rounded-lg blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+          <span className="font-bold tracking-tight">LSCA</span>
         </button>
 
         {/* Navigation Links - Centered */}
         <nav className="flex space-x-8">
           <button 
             onClick={() => scrollToSection('about')}
-            className="text-white/90 hover:text-cyan-200 transition-colors font-black hover:scale-105 transform duration-200" 
-            style={{ fontFamily: '"Arial Black", "Helvetica Neue", Arial, sans-serif', fontWeight: 900, letterSpacing: '-0.02em' }}
+            className="text-white/80 hover:text-teal-400 transition-all duration-300 font-medium hover:scale-105 transform relative group" 
           >
             About
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-teal-400 group-hover:w-full transition-all duration-300"></span>
           </button>
           <button 
             onClick={() => scrollToSection('events')}
-            className="text-white/90 hover:text-cyan-200 transition-colors font-black hover:scale-105 transform duration-200" 
-            style={{ fontFamily: '"Arial Black", "Helvetica Neue", Arial, sans-serif', fontWeight: 900, letterSpacing: '-0.02em' }}
+            className="text-white/80 hover:text-teal-400 transition-all duration-300 font-medium hover:scale-105 transform relative group" 
           >
             Events
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-teal-400 group-hover:w-full transition-all duration-300"></span>
           </button>
           <button 
             onClick={() => scrollToSection('get-involved')}
-            className="text-white/90 hover:text-cyan-200 transition-colors font-black hover:scale-105 transform duration-200" 
-            style={{ fontFamily: '"Arial Black", "Helvetica Neue", Arial, sans-serif', fontWeight: 900, letterSpacing: '-0.02em' }}
+            className="text-white/80 hover:text-teal-400 transition-all duration-300 font-medium hover:scale-105 transform relative group" 
           >
             Get involved
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-teal-400 group-hover:w-full transition-all duration-300"></span>
           </button>
           <button 
             onClick={() => scrollToSection('team')}
-            className="text-white/90 hover:text-cyan-200 transition-colors font-black hover:scale-105 transform duration-200" 
-            style={{ fontFamily: '"Arial Black", "Helvetica Neue", Arial, sans-serif', fontWeight: 900, letterSpacing: '-0.02em' }}
+            className="text-white/80 hover:text-teal-400 transition-all duration-300 font-medium hover:scale-105 transform relative group" 
           >
             Team
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-teal-400 group-hover:w-full transition-all duration-300"></span>
           </button>
           <button 
             onClick={() => scrollToSection('contact')}
-            className="text-white/90 hover:text-cyan-200 transition-colors font-black hover:scale-105 transform duration-200" 
-            style={{ fontFamily: '"Arial Black", "Helvetica Neue", Arial, sans-serif', fontWeight: 900, letterSpacing: '-0.02em' }}
+            className="text-white/80 hover:text-teal-400 transition-all duration-300 font-medium hover:scale-105 transform relative group" 
           >
             Contact
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-teal-400 group-hover:w-full transition-all duration-300"></span>
           </button>
         </nav>
 
