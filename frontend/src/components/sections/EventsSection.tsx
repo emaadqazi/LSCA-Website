@@ -154,17 +154,18 @@ const EventsSection = () => {
               onClick={(e) => e.stopPropagation()}
               className="bg-navy-800/95 backdrop-blur-xl rounded-3xl max-w-3xl w-full border border-teal-400/30 shadow-2xl max-h-[70vh] overflow-hidden relative"
             >
-              {/* Close Button */}
+              {/* Close Button - Positioned absolutely above scrollable content */}
               <button
                 onClick={() => setSelectedEvent(null)}
-                className="absolute top-4 right-4 md:top-6 md:right-6 text-white/60 hover:text-white transition-colors z-10"
+                className="absolute top-1 right-1 md:top-2 md:right-2 text-white/60 hover:text-white transition-colors z-50 bg-navy-800/80 rounded-full p-1.5 hover:bg-navy-800"
+                aria-label="Close modal"
               >
-                <X size={24} strokeWidth={2} />
+                <X size={20} strokeWidth={2} />
               </button>
 
               {/* Scrollable Content Container */}
               <div 
-                className="overflow-y-auto custom-scrollbar p-6 md:p-8 max-h-[70vh]"
+                className="overflow-y-auto custom-scrollbar p-6 md:p-8 max-h-[70vh] relative pt-12 md:pt-14"
                 style={{
                   scrollbarWidth: 'thin',
                   scrollbarColor: 'rgba(20, 184, 166, 0.4) transparent'
