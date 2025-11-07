@@ -4,6 +4,9 @@ import { useState } from 'react'
 
 const EventsSection = () => {
   const [selectedEvent, setSelectedEvent] = useState<number | null>(null)
+  
+  // Get base URL for image paths
+  const baseUrl = import.meta.env.BASE_URL
 
   const events = [
     {
@@ -18,31 +21,31 @@ const EventsSection = () => {
         { 
           name: "Blessing Ukiri", 
           title: "Supply Chain & Operations at EY", 
-          photo: "/images/SpeakersPFP/Blessing-Ukiri.jpeg", 
+          photo: `${baseUrl}images/SpeakersPFP/Blessing-Ukiri.jpeg`, 
           linkedin: "https://www.linkedin.com/in/blessingukiri/" 
         },
         { 
           name: "Kunal Sheel", 
           title: "Sr. IT Analyst, Supply Chain, at Honey Well", 
-          photo: "/images/SpeakersPFP/Kunal-Sheel.jpeg", 
+          photo: `${baseUrl}images/SpeakersPFP/Kunal-Sheel.jpeg`, 
           linkedin: "https://www.linkedin.com/in/kunalsheel/" 
         },
         { 
           name: "Micheal Haughton", 
           title: "Program Director of Supply Chain Management at Laurier", 
-          photo: "/images/SpeakersPFP/Micheal-Haughton.jpeg", 
+          photo: `${baseUrl}images/SpeakersPFP/Micheal-Haughton.jpeg`, 
           linkedin: "https://www.linkedin.com/in/michael-haughton-99395a3a/" 
         },
         { 
           name: "Andaleeb Syed Dobson", 
           title: "Inventory Planning/Supply Chain Strategy at LCBO", 
-          photo: "/images/SpeakersPFP/Andaleeb-Syed-Dobson.jpeg", 
+          photo: `${baseUrl}images/SpeakersPFP/Andaleeb-Syed-Dobson.jpeg`, 
           linkedin: "https://www.linkedin.com/in/andaleeb-syed-dobson/" 
         },
         { 
           name: "Redwan Siddiqui", 
           title: "Professor in Supply Chain Management", 
-          photo: "/images/SpeakersPFP/Redwan-Siddiqui.jpeg", 
+          photo: `${baseUrl}images/SpeakersPFP/Redwan-Siddiqui.jpeg`, 
           linkedin: "https://www.linkedin.com/in/redwan/" 
         }
       ]
@@ -240,27 +243,34 @@ const EventsSection = () => {
                             {/* Speaker avatar */}
                             <div className="relative w-16 h-16 flex-shrink-0">
                               {speaker.photo ? (
-                                <img 
-                                  src={speaker.photo.split('/').map((part, i) => i === speaker.photo.split('/').length - 1 ? encodeURIComponent(part) : part).join('/')}
-                                  alt={speaker.name}
-                                  className="w-full h-full rounded-full object-cover ring-2 ring-teal-400/40"
-                                  onError={(e) => {
-                                    e.currentTarget.style.display = 'none';
-                                    const parent = e.currentTarget.parentElement;
-                                    if (parent) {
-                                      const fallback = parent.querySelector('.avatar-fallback');
+                                <>
+                                  <img 
+                                    src={speaker.photo}
+                                    alt={speaker.name}
+                                    className="w-full h-full rounded-full object-cover ring-2 ring-teal-400/40"
+                                    onError={(e) => {
+                                      e.currentTarget.style.display = 'none';
+                                      const fallback = e.currentTarget.nextElementSibling as HTMLElement;
                                       if (fallback) fallback.style.display = 'flex';
-                                    }
-                                  }}
-                                />
-                              ) : null}
-                              <div 
-                                className={`w-full h-full rounded-full bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center ring-2 ring-teal-400/40 ${speaker.photo ? 'hidden avatar-fallback' : ''}`}
-                              >
-                                <span className="text-white font-bold text-lg">
-                                  {speaker.name.charAt(0)}
-                                </span>
-                              </div>
+                                    }}
+                                  />
+                                  <div 
+                                    className="w-full h-full rounded-full bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center ring-2 ring-teal-400/40 hidden avatar-fallback"
+                                  >
+                                    <span className="text-white font-bold text-lg">
+                                      {speaker.name.charAt(0)}
+                                    </span>
+                                  </div>
+                                </>
+                              ) : (
+                                <div 
+                                  className="w-full h-full rounded-full bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center ring-2 ring-teal-400/40"
+                                >
+                                  <span className="text-white font-bold text-lg">
+                                    {speaker.name.charAt(0)}
+                                  </span>
+                                </div>
+                              )}
                             </div>
                             
                             <div className="flex-1 min-w-0">
@@ -270,7 +280,7 @@ const EventsSection = () => {
                           </div>
                           
                           {/* LinkedIn link */}
-                          {speaker.linkedin && (
+                          {'linkedin' in speaker && speaker.linkedin && (
                             <a
                               href={speaker.linkedin}
                               target="_blank"
