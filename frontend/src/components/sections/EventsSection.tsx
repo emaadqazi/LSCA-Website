@@ -101,14 +101,14 @@ const EventsSection = () => {
               viewport={{ once: true }}
               whileHover={{ y: -8, scale: 1.02 }}
               onClick={() => setSelectedEvent(index)}
-              className="group bg-navy-800/40 backdrop-blur-md rounded-2xl p-6 border border-teal-400/20 hover:border-teal-400/40 hover:shadow-xl hover:shadow-teal-400/10 transition-all duration-300 cursor-pointer"
+              className="group bg-navy-800/40 backdrop-blur-md rounded-2xl p-6 border border-teal-400/20 hover:border-teal-400/40 hover:shadow-xl hover:shadow-teal-400/10 transition-all duration-300 cursor-pointer flex flex-col h-full"
             >
-              <div className="mb-6">
-                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-teal-400 transition-colors">{event.title}</h3>
-                <p className="text-navy-100/70 mb-4 font-normal leading-relaxed">{event.description}</p>
+              <div className="mb-6 flex-grow">
+                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-teal-400 transition-colors min-h-[3rem]">{event.title}</h3>
+                <p className="text-navy-100/70 mb-4 font-normal leading-relaxed min-h-[4rem]">{event.description}</p>
               </div>
               
-              <div className="space-y-3 pt-4 border-t border-teal-400/10">
+              <div className="space-y-3 pt-4 border-t border-teal-400/10 flex-shrink-0">
                 <div className="flex items-center">
                   <Calendar size={18} className="mr-3 text-teal-400" strokeWidth={2} />
                   <span className="text-navy-100/80 text-sm">{event.date}</span>
@@ -127,7 +127,7 @@ const EventsSection = () => {
                 </div>
               </div>
 
-              <div className="mt-4 pt-4 border-t border-teal-400/10">
+              <div className="mt-4 pt-4 border-t border-teal-400/10 flex-shrink-0">
                 <button className="text-teal-400 text-sm font-medium hover:text-teal-300 transition-colors">
                   View Details →
                 </button>
