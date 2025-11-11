@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Header from './layout/Header'
 import HeroSection from './features/HeroSection'
 import AboutSection from './sections/AboutSection'
@@ -85,7 +85,6 @@ const connections = [
 const SinglePage = () => {
   const [scrollY, setScrollY] = useState(0)
   const [viewportHeight, setViewportHeight] = useState(0)
-  const { scrollYProgress } = useScroll()
 
   useEffect(() => {
     // Add smooth scrolling behavior to the entire page
