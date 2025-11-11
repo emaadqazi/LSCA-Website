@@ -51,27 +51,27 @@ const EventsSection = () => {
       ]
     },
     {
-      title: "Networking Mixer with Industry Professionals",
-      date: "April 8, 2024",
-      time: "7:00 PM - 10:00 PM",
-      location: "Waterloo Convention Centre",
-      attendees: "200+",
-      description: "Connect with supply chain professionals from leading companies in an informal networking setting.",
-      fullDescription: "An informal evening designed to connect students with industry professionals. This mixer provides an excellent opportunity to build relationships, learn about career paths, and discover internship opportunities. Food and refreshments will be provided.",
+      title: "LSCA Case Competition",
+      date: "November 22nd, 2025",
+      time: "TBD",
+      location: "TBD",
+      attendees: "100+",
+      description: "Compete in a Case Competition backed by LSCA. Details to follow.",
+      fullDescription: "Supply Chain is becoming one of the most crucial industires with the increase in chip manufacturing, and hardware requirements. This is your chance to compete on a Supply Chain focused challenge.",
       speakers: [
-        { name: "Various Professionals", title: "From leading supply chain companies", photo: "" }
+        // { name: "Various Professionals", title: "From leading supply chain companies", photo: "" }
       ]
     },
     {
-      title: "Case Study Competition",
-      date: "May 3, 2024",
-      time: "9:00 AM - 5:00 PM",
-      location: "Laurier Business School",
-      attendees: "80+",
-      description: "Test your problem-solving skills in our annual case study competition with real-world supply chain challenges.",
-      fullDescription: "Our flagship competition where teams of students tackle real-world supply chain challenges. Participants will analyze complex scenarios, develop strategic solutions, and present their findings to a panel of industry judges. Prizes awarded to top teams, plus networking opportunities with sponsors.",
+      title: "TBD",
+      date: "",
+      time: "",
+      location: "",
+      attendees: "",
+      description: "",
+      fullDescription: "",
       speakers: [
-        { name: "Industry Judges Panel", title: "Representatives from sponsoring companies", photo: "" }
+        // { name: "Industry Judges Panel", title: "Representatives from sponsoring companies", photo: "" }
       ]
     }
   ]
@@ -87,7 +87,7 @@ const EventsSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
-            Recent <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-300">Events</span>
+            Past & Upcoming <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-300">Events</span>
           </h2>
         </motion.div>
 
