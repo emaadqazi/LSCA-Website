@@ -47,13 +47,13 @@ const Header = () => {
             Events
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-teal-500 group-hover:w-full transition-all duration-300"></span>
           </button>
-          <button 
+          {/* <button 
             onClick={() => scrollToSection('get-involved')}
             className="text-white/80 hover:text-teal-500 transition-all duration-300 font-medium hover:scale-105 transform relative group" 
           >
             Get involved
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-teal-500 group-hover:w-full transition-all duration-300"></span>
-          </button>
+          </button> */}
           <button 
             onClick={() => scrollToSection('team')}
             className="text-white/80 hover:text-teal-500 transition-all duration-300 font-medium hover:scale-105 transform relative group" 

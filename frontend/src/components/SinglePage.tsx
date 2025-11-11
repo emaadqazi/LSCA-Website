@@ -4,7 +4,7 @@ import Header from './layout/Header'
 import HeroSection from './features/HeroSection'
 import AboutSection from './sections/AboutSection'
 import EventsSection from './sections/EventsSection'
-import GetInvolvedSection from './sections/GetInvolvedSection'
+// import GetInvolvedSection from './sections/GetInvolvedSection'
 import TeamSection from './sections/TeamSection'
 import ContactSection from './sections/ContactSection'
 
@@ -330,7 +330,7 @@ const SinglePage = () => {
         <EventsSection />
         
         {/* Get Involved Section */}
-        <GetInvolvedSection />
+        {/* <GetInvolvedSection /> */}
         
         {/* Team Section */}
         <TeamSection />
