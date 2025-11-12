@@ -45,6 +45,13 @@ const TeamSection = () => {
           yearProgram: "4th Year BBA",
           image: "/LSCA-Website/images/MembersPFP/VPs/EwanMacneil.png",
           linkedin: "https://www.linkedin.com/in/ewanmacneil/"
+        },
+        {
+          name: "Leonidas Bakalis",
+          role: "First Year Representative",
+          yearProgram: "1st Year BBA",
+          image: "/LSCA-Website/images/MembersPFP/Directors/LeonidasBakalis.png",
+          linkedin: "https://www.linkedin.com/in/leonidas-bakalis-014209308/"
         }
       ]
     },
@@ -57,6 +64,20 @@ const TeamSection = () => {
           yearProgram: "4th Year BBA",
           image: "/LSCA-Website/images/MembersPFP/VPs/AbiraSelim.png",
           linkedin: "https://www.linkedin.com/in/abiraselim2004/"
+        },
+        {
+          name: "Iqra Morkas",
+          role: "Director of Corporate Relations",
+          yearProgram: "3rd Year BA",
+          image: "/LSCA-Website/images/MembersPFP/VPs/IqraMorkas.png",
+          linkedin: "https://www.linkedin.com/in/iqra-morkas-0aa121274/"
+        },
+        {
+          name: "James Carmichael",
+          role: "Director of Corporate Relations",
+          yearProgram: "1st Year BBA",
+          image: "/LSCA-Website/images/MembersPFP/VPs/JamesCarmichael.png",
+          linkedin: "https://www.linkedin.com/in/james-carmichael-95707b374/"
         }
       ]
     },
@@ -69,7 +90,28 @@ const TeamSection = () => {
           yearProgram: "3rd Year BBA",
           image: "/LSCA-Website/images/MembersPFP/VPs/AfnanShan.png",
           linkedin: "https://www.linkedin.com/in/afnanshan/"
-        }
+        },
+        {
+          name: "Sebastian Teodorescu",
+          role: "Director of Education",
+          yearProgram: "2nd Year BBA",
+          image: "/LSCA-Website/images/MembersPFP/Directors/SebastianTeodorescu.png",
+          linkedin: "https://www.linkedin.com/in/sebastian-teodorescu/"
+        },
+        {
+          name: "Majd Abdulkarim ",
+          role: "Director of Education",
+          yearProgram: "2nd Year BBA/Finmath",
+          image: "/LSCA-Website/images/MembersPFP/Directors/MajdAbdulkarim.png",
+          linkedin: "https://www.linkedin.com/in/majdabdulkarim/"
+        },
+        {
+          name: "Ali Razack ",
+          role: "Director of Education",
+          yearProgram: "2nd Year BBA",
+          image: "/LSCA-Website/images/MembersPFP/Directors/AliRazack.png",
+          linkedin: "https://www.linkedin.com/in/ayanali-razack/"
+        },
       ]
     },
     {
@@ -88,6 +130,20 @@ const TeamSection = () => {
           yearProgram: "3rd Year BBA",
           image: "/LSCA-Website/images/MembersPFP/VPs/BraydenGreekamol.png",
           linkedin: "https://www.linkedin.com/in/brayden-greekamol/"
+        },
+        {
+          name: "Jay Kapadia",
+          role: "Director of Events",
+          yearProgram: "2nd Year BBA",
+          image: "/LSCA-Website/images/MembersPFP/VPs/JayKapadia.png",
+          linkedin: "https://www.linkedin.com/in/jay-kap/"
+        },
+        {
+          name: "Kavya Patel",
+          role: "Director of Events",
+          yearProgram: "2nd Year BBA",
+          image: "/LSCA-Website/images/MembersPFP/VPs/KavyaPatel.png",
+          linkedin: "https://www.linkedin.com/in/kavya-patell/"
         }
       ]
     },
@@ -100,6 +156,20 @@ const TeamSection = () => {
           yearProgram: "2nd Year BBA/BMath (UW)",
           image: "/LSCA-Website/images/MembersPFP/VPs/ChrisWeng.png",
           linkedin: "https://www.linkedin.com/in/chris-weng-intern/"
+        },
+        {
+          name: "Ryder Vilanez",
+          role: "Director of Marketing",
+          yearProgram: "1st Year BBA",
+          image: "/LSCA-Website/images/MembersPFP/Directors/RyderVilanez.png",
+          linkedin: "https://www.linkedin.com/in/rydervilanez/"
+        },
+        {
+          name: "Kaitlyn Lee",
+          role: "Director of Marketing",
+          yearProgram: "2nd Year BBA",
+          image: "/LSCA-Website/images/MembersPFP/VPs/ChrisWeng.png",
+          linkedin: "https://www.linkedin.com/in/kaitlyn-a-lee/"
         }
       ]
     },
@@ -112,6 +182,20 @@ const TeamSection = () => {
           yearProgram: "3rd Year BBA/BSc",
           image: "/LSCA-Website/images/MembersPFP/VPs/EmaadQazi.png",
           linkedin: "https://www.linkedin.com/in/emaadqazi/"
+        },
+        {
+          name: "Moeez Ishaq",
+          role: "Director of Software",
+          yearProgram: "3rd Year BBA/BSc",
+          image: "/LSCA-Website/images/MembersPFP/VPs/MoeezIshaq.png",
+          linkedin: "https://www.linkedin.com/in/moeez-ishaq/"
+        },
+        {
+          name: "David Zhao",
+          role: "Director of Software",
+          yearProgram: "2nd year CS",
+          image: "/LSCA-Website/images/MembersPFP/VPs/DavidZhao.png",
+          linkedin: "https://www.linkedin.com/in/david-zhao-0524dz/"
         }
       ]
     },
@@ -124,6 +208,13 @@ const TeamSection = () => {
           yearProgram: "3rd Year BBA",
           image: "/LSCA-Website/images/MembersPFP/VPs/ZanirKhot.png",
           linkedin: "https://www.linkedin.com/in/zanirkhot/"
+        },
+        {
+          name: "Nicholas Cornea",
+          role: "VP of Finance",
+          yearProgram: "2nd Year BBA",
+          image: "/LSCA-Website/images/MembersPFP/VPs/NicholasCornea.png",
+          linkedin: "https://www.linkedin.com/in/nicholas-cornea-716350217/"
         }
       ]
     }
