@@ -221,25 +221,25 @@ const TeamSection = () => {
   ]
 
   return (
-    <section id="team" className="min-h-screen px-8 py-20">
+    <section id="team" className="min-h-screen px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 md:mb-8 leading-tight">
             Meet the <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-300">Team</span>
           </h2>
-          <p className="text-xl md:text-2xl text-navy-100/80 max-w-4xl mx-auto leading-relaxed font-light">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-navy-100/80 max-w-4xl mx-auto leading-relaxed font-light px-4">
             Get to know the LSCA team, consisting of 12 VPs and 15 Directors across 6 portfolios!
           </p>
         </motion.div>
 
         {/* All Teams Display */}
-        <div className="space-y-16">
+        <div className="space-y-12 md:space-y-16">
           {teams.map((team, teamIndex) => (
             <motion.div
               key={teamIndex}
@@ -249,7 +249,7 @@ const TeamSection = () => {
               viewport={{ once: true }}
             >
               {/* Section Heading */}
-              <h3 className="text-3xl md:text-4xl font-bold text-white mb-8">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 md:mb-8">
                 {team.name}
               </h3>
 
@@ -265,26 +265,26 @@ const TeamSection = () => {
                     className="flex flex-col items-start text-left"
                   >
                     {/* Profile Picture */}
-                    <div className="mb-4">
+                    <div className={`mb-3 md:mb-4 ${member.name === "James Carmichael" ? "overflow-hidden rounded-full" : ""}`}>
                       <img
                         src={member.image}
                         alt={member.name}
-                        className="w-32 h-32 rounded-full object-cover"
+                        className={`w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full object-cover ${member.name === "James Carmichael" ? "object-center scale-110" : ""}`}
                       />
                     </div>
                     
                     {/* Name */}
-                    <h4 className="text-lg font-bold text-white mb-2">
+                    <h4 className="text-base sm:text-lg font-bold text-white mb-1 md:mb-2">
                       {member.name}
                     </h4>
                     
                     {/* Role */}
-                    <p className="text-navy-100/90 font-medium mb-2 text-sm">
+                    <p className="text-navy-100/90 font-medium mb-1 md:mb-2 text-xs sm:text-sm">
                       {member.role}
                     </p>
                     
                     {/* Year/Program */}
-                    <p className="text-navy-100/60 mb-3 text-xs">
+                    <p className="text-navy-100/60 mb-2 md:mb-3 text-xs">
                       {member.yearProgram}
                     </p>
                     
