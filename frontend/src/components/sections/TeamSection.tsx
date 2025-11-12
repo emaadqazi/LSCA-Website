@@ -233,9 +233,9 @@ const TeamSection = () => {
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
             Meet the <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-300">Team</span>
           </h2>
-          {/* <p className="text-xl md:text-2xl text-navy-100/80 max-w-4xl mx-auto leading-relaxed font-light">
-            Get to know the LSCA team, consisting of 12 VPs and 15+ Directors across 8 portfolios!
-          </p> */}
+          <p className="text-xl md:text-2xl text-navy-100/80 max-w-4xl mx-auto leading-relaxed font-light">
+            Get to know the LSCA team, consisting of 12 VPs and 15 Directors across 6 portfolios!
+          </p>
         </motion.div>
 
         {/* All Teams Display */}

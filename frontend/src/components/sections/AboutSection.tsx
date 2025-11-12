@@ -19,7 +19,7 @@ const AboutSection = () => {
           </p>
           <br />
           <p className="text-xl md:text-2xl text-navy-100/80 max-w-3xl mx-auto leading-relaxed font-light">
-            With 26 members consisting of 12 VPs and 14 Directors, we have a team experienced in working amongst numerous industries including Supply Chain, Tech, Accounting, and more!
+            With 25 members consisting of 12 VPs and 15 Directors, we have a team experienced in working amongst numerous industries including Supply Chain, Tech, Accounting, and more!
           </p>
           <p className="text-xl md:text-2xl text-navy-100/80 max-w-3xl mx-auto leading-relaxed font-light">
           <br />
