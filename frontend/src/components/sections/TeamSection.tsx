@@ -211,7 +211,7 @@ const TeamSection = () => {
         },
         {
           name: "Nicholas Cornea",
-          role: "VP of Finance",
+          role: "Director of Finance",
           yearProgram: "2nd Year BBA",
           image: "/LSCA-Website/images/MembersPFP/Directors/NicholasCornea.png",
           linkedin: "https://www.linkedin.com/in/nicholas-cornea-716350217/"
