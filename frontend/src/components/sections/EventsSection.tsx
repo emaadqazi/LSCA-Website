@@ -42,13 +42,23 @@ const EventsSection = () => {
           photo: `${baseUrl}images/SpeakersPFP/Andaleeb-Syed-Dobson.jpeg`, 
           linkedin: "https://www.linkedin.com/in/andaleeb-syed-dobson/" 
         },
-        { 
-          name: "Redwan Siddiqui", 
-          title: "Professor in Supply Chain Management", 
-          photo: `${baseUrl}images/SpeakersPFP/Redwan-Siddiqui.jpeg`, 
-          linkedin: "https://www.linkedin.com/in/redwan/" 
+        {
+          name: "Redwan Siddiqui",
+          title: "Professor in Supply Chain Management",
+          photo: `${baseUrl}images/SpeakersPFP/Redwan-Siddiqui.jpeg`,
+          linkedin: "https://www.linkedin.com/in/redwan/"
         }
       ]
+    },
+    {
+      title: "Supply Chain Trivia",
+      date: "January 12th, 2026",
+      time: "7:00PM to 9:00PM",
+      location: "Lazaridis, LH2064",
+      attendees: "100+",
+      description: "Test your supply chain knowledge in our Jeopardy-style trivia night with a $250 prize pool!",
+      fullDescription: "Join us for an exciting evening of Supply Chain Trivia! Compete in 2-3 rounds of Jeopardy-style questions for a chance to win from our $250 prize pool. LSCA members can participate if they bring a team of friends. We're also giving away 2x $25 gift cards to attendees (non-LSCA members eligible). Plus, there's an internal competition for LSCA members - whoever brings the most people wins a $50 gift card! Register through the link in our Instagram bio and make sure to fill in which LSCA member referred you. Snacks included. Dress code is casual - wear your LSCA merch if you have it!",
+      speakers: []
     },
     {
       title: "LSCA Case Competition",
@@ -226,13 +236,14 @@ const EventsSection = () => {
                   </div>
                 </div>
 
-                {/* Speakers Section */}
+                {/* Speakers Section - Only show if there are speakers */}
+                {events[selectedEvent].speakers.length > 0 && (
                 <div className="pb-2">
                   <div className="flex items-center space-x-3 mb-3 sm:mb-4">
                     <Mic className="text-teal-400" size={20} strokeWidth={2} />
                     <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white">Speakers</h3>
                   </div>
-                  
+
                   <div className="grid grid-cols-1 gap-2 sm:gap-3">
                     {events[selectedEvent].speakers.map((speaker, idx) => (
                       <div
@@ -298,6 +309,7 @@ const EventsSection = () => {
                     ))}
                   </div>
                 </div>
+                )}
                 </div>
               </div>
             </motion.div>
