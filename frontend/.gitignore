@@ -25,3 +25,6 @@ dist-ssr
 
 # Claude ReadME File for Development
 CLAUDE.md 
+
+# Prompts
+prompts/
