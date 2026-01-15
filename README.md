@@ -2,4 +2,7 @@
 
 Access at: https://www.emaadqazi.github.io/LSCA-Website
 
-Currently in prototype phase, official release coming soon
+
+Version 1 is released at the above link ^
+
+Configuring DNS via GoDaddy and will get lauriersupplychain.ca live soon

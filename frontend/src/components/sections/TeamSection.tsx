@@ -28,7 +28,7 @@ const TeamSection = () => {
         {
           name: "Ben Maycock",
           role: "Executive VP",
-          yearProgram: "3rd Year BBA",
+          yearProgram: "3rd Year Economics",
           image: "/LSCA-Website/images/MembersPFP/VPs/BenMaycock.png",
           linkedin: "https://www.linkedin.com/in/ben-maycock-56a84b29b/"
         },
