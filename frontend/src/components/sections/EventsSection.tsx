@@ -61,28 +61,14 @@ const EventsSection = () => {
       speakers: []
     },
     {
-      title: "LSCA Case Competition",
-      date: "November 22nd, 2025",
+      title: "US Tariffs Case Competition",
+      date: "February 27th, 2026",
       time: "TBD",
       location: "TBD",
-      attendees: "100+",
-      description: "Compete in a Case Competition backed by LSCA. Details to follow.",
-      fullDescription: "Supply Chain is becoming one of the most crucial industires with the increase in chip manufacturing, and hardware requirements. This is your chance to compete on a Supply Chain focused challenge.",
-      speakers: [
-        // { name: "Various Professionals", title: "From leading supply chain companies", photo: "" }
-      ]
-    },
-    {
-      title: "TBD",
-      date: "",
-      time: "",
-      location: "",
-      attendees: "",
-      description: "",
-      fullDescription: "",
-      speakers: [
-        // { name: "Industry Judges Panel", title: "Representatives from sponsoring companies", photo: "" }
-      ]
+      attendees: "Open to BU275/BU375 Students",
+      description: "An optional case competition for BU275 and BU375 students analyzing US tariffs for bonus marks.",
+      fullDescription: "The Supply Chain Department is introducing an optional case competition into BU275 and BU375 for bonus marks regarding US tariffs. Instead of a PowerPoint presentation, participants will present a poster solution (similar to World of Opportunities in 4th year). Cases will be distributed approximately 2 weeks before the presentation date. This competition is organized by Dr. Michael Haughton, our faculty advisor, in collaboration with LSCA. Open to all students currently enrolled in BU275 or BU375.",
+      speakers: []
     }
   ]
 

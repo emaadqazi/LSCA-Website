@@ -77,6 +77,46 @@ Add a new event to EventsSection.tsx with the following details:
 
 ---
 
+## Example: Case Competition Event
+
+```
+Add a new event to EventsSection.tsx with the following details:
+
+**Event Type:** Case Competition
+
+**Basic Info:**
+- Title: US Tariffs Case Competition
+- Date: February 27th, 2026
+- Time: TBD
+- Location: TBD
+- Expected Attendees: Open to BU275/BU375 Students
+
+**Descriptions:**
+- Short Description: An optional case competition for BU275 and BU375 students analyzing US tariffs for bonus marks.
+- Full Description: The Supply Chain Department is introducing an optional case competition into BU275 and BU375 for bonus marks regarding US tariffs. Instead of a PowerPoint presentation, participants will present a poster solution (similar to World of Opportunities in 4th year). Cases will be distributed approximately 2 weeks before the presentation date. This competition is organized by Dr. Michael Haughton, our faculty advisor, in collaboration with LSCA. Open to all students currently enrolled in BU275 or BU375.
+
+**Speakers:** None
+```
+
+---
+
+## Tips for Raw Announcement Messages
+
+When receiving a raw Slack/Discord announcement, extract the following:
+
+1. **Event name** - Usually mentioned at the start or in bold
+2. **Date & Time** - Look for specific dates, times, or "this Monday", "tonight", etc.
+3. **Location** - Room numbers, building names
+4. **Key details** - Prizes, rules, dress code, registration info
+5. **Eligibility** - Who can attend (everyone, specific classes, members only)
+
+**For future/upcoming events with TBD details:**
+- Use "TBD" for unknown time/location
+- Focus the description on what IS known
+- Update later when details are confirmed
+
+---
+
 ## File Location
 
 Events are stored in:
