@@ -26,7 +26,7 @@ const Header = () => {
         >
           <div className="relative">
             <img 
-              src="/LSCA-Website/images/LSCA Logo.jpeg" 
+              src="/images/LSCA Logo.jpeg" 
               alt="LSCA Logo" 
               className="h-8 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-110"
               style={{
