@@ -91,7 +91,7 @@ const EventsSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {events.map((event, index) => (
             <motion.div
               key={index}
@@ -101,7 +101,7 @@ const EventsSection = () => {
               viewport={{ once: true }}
               whileHover={{ y: -8, scale: 1.02 }}
               onClick={() => setSelectedEvent(index)}
-              className="group bg-navy-800/40 backdrop-blur-md rounded-2xl p-6 border border-teal-400/20 hover:border-teal-400/40 hover:shadow-xl hover:shadow-teal-400/10 transition-all duration-300 cursor-pointer"
+              className="group bg-navy-800/40 backdrop-blur-md rounded-2xl p-4 sm:p-6 border border-teal-400/20 hover:border-teal-400/40 hover:shadow-xl hover:shadow-teal-400/10 transition-all duration-300 cursor-pointer touch-manipulation"
             >
               <div className="mb-6">
                 <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-teal-400 transition-colors">{event.title}</h3>
@@ -145,19 +145,19 @@ const EventsSection = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedEvent(null)}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto"
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-2 sm:p-4 overflow-y-auto"
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-navy-800/95 backdrop-blur-xl rounded-3xl max-w-3xl w-full border border-teal-400/30 shadow-2xl max-h-[70vh] overflow-hidden relative"
+              className="bg-navy-800/95 backdrop-blur-xl rounded-2xl sm:rounded-3xl max-w-3xl w-full border border-teal-400/30 shadow-2xl max-h-[85vh] sm:max-h-[80vh] md:max-h-[70vh] overflow-hidden relative"
             >
               {/* Close Button - Positioned absolutely above scrollable content */}
               <button
                 onClick={() => setSelectedEvent(null)}
-                className="absolute top-1 right-1 md:top-2 md:right-2 text-white/60 hover:text-white transition-colors z-50 bg-navy-800/80 rounded-full p-1.5 hover:bg-navy-800"
+                className="absolute top-2 right-2 md:top-3 md:right-3 text-white/60 hover:text-white transition-colors z-50 bg-navy-800/90 rounded-full p-2 md:p-1.5 hover:bg-navy-800 min-w-[40px] min-h-[40px] md:min-w-auto md:min-h-auto flex items-center justify-center"
                 aria-label="Close modal"
               >
                 <X size={20} strokeWidth={2} />
@@ -165,7 +165,7 @@ const EventsSection = () => {
 
               {/* Scrollable Content Container */}
               <div 
-                className="overflow-y-auto custom-scrollbar p-6 md:p-8 max-h-[70vh] relative pt-12 md:pt-14"
+                className="overflow-y-auto custom-scrollbar p-4 sm:p-6 md:p-8 max-h-[85vh] sm:max-h-[80vh] md:max-h-[70vh] relative pt-14 md:pt-16"
                 style={{
                   scrollbarWidth: 'thin',
                   scrollbarColor: 'rgba(20, 184, 166, 0.4) transparent'
