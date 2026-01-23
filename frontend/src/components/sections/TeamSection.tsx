@@ -2,6 +2,9 @@ import { motion } from 'framer-motion'
 import { Linkedin } from 'lucide-react'
 
 const TeamSection = () => {
+  // Get base URL for image paths
+  const baseUrl = import.meta.env.BASE_URL
+
   const teams = [
     {
       name: "Presidents",
