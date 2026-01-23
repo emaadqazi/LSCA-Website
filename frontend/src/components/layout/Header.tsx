@@ -1,11 +1,6 @@
-<<<<<<< HEAD
 import { useState, useEffect } from 'react'
 import { Linkedin, Instagram, Slack, Menu, X, ChevronLeft } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-=======
-import { Linkedin, Instagram, Slack, Menu, X } from 'lucide-react'
-import { useState } from 'react'
->>>>>>> 4b62dfaa135a43fa68361edb57a63bbc7a6ebdc7
 
 const scrollToSection = (sectionId: string) => {
   const element = document.getElementById(sectionId)
@@ -15,7 +10,6 @@ const scrollToSection = (sectionId: string) => {
 }
 
 const Header = () => {
-<<<<<<< HEAD
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   // Prevent body scroll when mobile menu is open
@@ -41,13 +35,6 @@ const Header = () => {
   const handleMobileNavClick = (sectionId: string) => {
     scrollToSection(sectionId)
     closeMobileMenu()
-=======
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
-  const handleNavClick = (sectionId: string) => {
-    scrollToSection(sectionId)
-    setMobileMenuOpen(false)
->>>>>>> 4b62dfaa135a43fa68361edb57a63bbc7a6ebdc7
   }
 
   return (
@@ -73,11 +60,7 @@ const Header = () => {
           <span className="font-bold tracking-tight">LSCA</span>
         </button>
 
-<<<<<<< HEAD
         {/* Navigation Links - Desktop Only */}
-=======
-        {/* Navigation Links - Desktop */}
->>>>>>> 4b62dfaa135a43fa68361edb57a63bbc7a6ebdc7
         <nav className="hidden md:flex space-x-8">
           <button 
             onClick={() => scrollToSection('about')}
@@ -148,18 +131,8 @@ const Header = () => {
             <Slack size={22} strokeWidth={2} />
           </a>
         </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden text-white hover:text-teal-500 transition-colors p-2"
-          aria-label="Toggle menu"
-        >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
       </div>
 
-<<<<<<< HEAD
       {/* Mobile Navigation Overlay */}
       <AnimatePresence>
         {isMobileMenuOpen && (
@@ -186,7 +159,7 @@ const Header = () => {
                 <div className="flex items-center justify-between mb-8">
                   <div className="flex items-center space-x-3">
                     <img 
-                      src="/LSCA-Website/LSCA Logo.jpeg" 
+                      src="/images/LSCA Logo.jpeg" 
                       alt="LSCA Logo" 
                       className="h-8 w-auto object-contain"
                     />
@@ -214,13 +187,6 @@ const Header = () => {
                     className="w-full text-left text-white/80 hover:text-teal-500 transition-all duration-300 text-lg font-medium py-3 px-4 rounded-lg hover:bg-teal-500/10 flex items-center justify-between group"
                   >
                     Events
-                    <ChevronLeft className="transform rotate-180 opacity-0 group-hover:opacity-100 transition-opacity duration-200" size={20} />
-                  </button>
-                  <button 
-                    onClick={() => handleMobileNavClick('get-involved')}
-                    className="w-full text-left text-white/80 hover:text-teal-500 transition-all duration-300 text-lg font-medium py-3 px-4 rounded-lg hover:bg-teal-500/10 flex items-center justify-between group"
-                  >
-                    Get Involved
                     <ChevronLeft className="transform rotate-180 opacity-0 group-hover:opacity-100 transition-opacity duration-200" size={20} />
                   </button>
                   <button 
@@ -277,68 +243,6 @@ const Header = () => {
           </>
         )}
       </AnimatePresence>
-=======
-      {/* Mobile Menu Overlay */}
-      {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 bg-navy-900/95 backdrop-blur-xl z-50 pt-20">
-          <nav className="flex flex-col items-center space-y-6 px-8">
-            <button 
-              onClick={() => handleNavClick('about')}
-              className="text-white/80 hover:text-teal-500 transition-all duration-300 font-medium text-xl py-2"
-            >
-              About
-            </button>
-            <button 
-              onClick={() => handleNavClick('events')}
-              className="text-white/80 hover:text-teal-500 transition-all duration-300 font-medium text-xl py-2"
-            >
-              Events
-            </button>
-            <button 
-              onClick={() => handleNavClick('team')}
-              className="text-white/80 hover:text-teal-500 transition-all duration-300 font-medium text-xl py-2"
-            >
-              Team
-            </button>
-            <button 
-              onClick={() => handleNavClick('contact')}
-              className="text-white/80 hover:text-teal-500 transition-all duration-300 font-medium text-xl py-2"
-            >
-              Contact
-            </button>
-            <div className="flex items-center space-x-6 pt-4 border-t border-teal-500/20 mt-4">
-              <a 
-                href="https://www.linkedin.com/company/lauriersupplychainassociation/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-white/70 hover:text-teal-500 transition-all duration-300"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={24} strokeWidth={2} />
-              </a>
-              <a 
-                href="https://www.instagram.com/lauriersupplychain/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-white/70 hover:text-teal-500 transition-all duration-300"
-                aria-label="Instagram"
-              >
-                <Instagram size={24} strokeWidth={2} />
-              </a>
-              <a 
-                href="https://join.slack.com/t/lsca-wlu/shared_invite" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-white/70 hover:text-teal-500 transition-all duration-300"
-                aria-label="Slack"
-              >
-                <Slack size={24} strokeWidth={2} />
-              </a>
-            </div>
-          </nav>
-        </div>
-      )}
->>>>>>> 4b62dfaa135a43fa68361edb57a63bbc7a6ebdc7
     </header>
   )
 }

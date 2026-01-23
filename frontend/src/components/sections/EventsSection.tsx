@@ -87,11 +87,7 @@ const EventsSection = () => {
           </h2>
         </motion.div>
 
-<<<<<<< HEAD
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-=======
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
->>>>>>> 4b62dfaa135a43fa68361edb57a63bbc7a6ebdc7
           {events.map((event, index) => (
             <motion.div
               key={index}
@@ -101,15 +97,11 @@ const EventsSection = () => {
               viewport={{ once: true }}
               whileHover={{ y: -8, scale: 1.02 }}
               onClick={() => setSelectedEvent(index)}
-<<<<<<< HEAD
-              className="group bg-navy-800/40 backdrop-blur-md rounded-2xl p-4 sm:p-6 border border-teal-400/20 hover:border-teal-400/40 hover:shadow-xl hover:shadow-teal-400/10 transition-all duration-300 cursor-pointer touch-manipulation"
-=======
-              className="group bg-navy-800/40 backdrop-blur-md rounded-2xl p-4 sm:p-5 md:p-6 border border-teal-400/20 hover:border-teal-400/40 hover:shadow-xl hover:shadow-teal-400/10 transition-all duration-300 cursor-pointer flex flex-col h-full"
->>>>>>> 4b62dfaa135a43fa68361edb57a63bbc7a6ebdc7
+              className="group bg-navy-800/40 backdrop-blur-md rounded-2xl p-4 sm:p-6 border border-teal-400/20 hover:border-teal-400/40 hover:shadow-xl hover:shadow-teal-400/10 transition-all duration-300 cursor-pointer touch-manipulation flex flex-col h-full"
             >
               <div className="mb-4 sm:mb-6 flex-grow">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 sm:mb-3 group-hover:text-teal-400 transition-colors min-h-[3rem]">{event.title}</h3>
-                <p className="text-navy-100/70 mb-3 sm:mb-4 font-normal leading-relaxed text-sm sm:text-base min-h-[4rem]">{event.description}</p>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 sm:mb-3 group-hover:text-teal-400 transition-colors">{event.title}</h3>
+                <p className="text-navy-100/70 mb-3 sm:mb-4 font-normal leading-relaxed text-sm sm:text-base">{event.description}</p>
               </div>
               
               <div className="space-y-3 pt-4 border-t border-teal-400/10 flex-shrink-0">
@@ -149,23 +141,19 @@ const EventsSection = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedEvent(null)}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-2 sm:p-4 overflow-y-auto"
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] flex items-center justify-center p-2 sm:p-4 overflow-y-auto"
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-<<<<<<< HEAD
-              className="bg-navy-800/95 backdrop-blur-xl rounded-2xl sm:rounded-3xl max-w-3xl w-full border border-teal-400/30 shadow-2xl max-h-[85vh] sm:max-h-[80vh] md:max-h-[70vh] overflow-hidden relative"
-=======
-              className="bg-navy-800/95 backdrop-blur-xl rounded-2xl sm:rounded-3xl max-w-3xl w-full border border-teal-400/30 shadow-2xl max-h-[85vh] sm:max-h-[70vh] overflow-hidden relative m-2"
->>>>>>> 4b62dfaa135a43fa68361edb57a63bbc7a6ebdc7
+              className="bg-navy-800/95 backdrop-blur-xl rounded-2xl sm:rounded-3xl max-w-3xl w-full border border-teal-400/30 shadow-2xl max-h-[85vh] sm:max-h-[80vh] md:max-h-[70vh] overflow-hidden relative m-2 z-[110]"
             >
               {/* Close Button - Positioned absolutely above scrollable content */}
               <button
                 onClick={() => setSelectedEvent(null)}
-                className="absolute top-2 right-2 md:top-3 md:right-3 text-white/60 hover:text-white transition-colors z-50 bg-navy-800/90 rounded-full p-2 md:p-1.5 hover:bg-navy-800 min-w-[40px] min-h-[40px] md:min-w-auto md:min-h-auto flex items-center justify-center"
+                className="absolute top-2 right-2 md:top-3 md:right-3 text-white/60 hover:text-white transition-colors z-[120] bg-navy-800/90 rounded-full p-2 md:p-1.5 hover:bg-navy-800 min-w-[40px] min-h-[40px] flex items-center justify-center"
                 aria-label="Close modal"
               >
                 <X size={20} strokeWidth={2} />
@@ -173,11 +161,7 @@ const EventsSection = () => {
 
               {/* Scrollable Content Container */}
               <div 
-<<<<<<< HEAD
                 className="overflow-y-auto custom-scrollbar p-4 sm:p-6 md:p-8 max-h-[85vh] sm:max-h-[80vh] md:max-h-[70vh] relative pt-14 md:pt-16"
-=======
-                className="overflow-y-auto custom-scrollbar p-4 sm:p-6 md:p-8 max-h-[85vh] sm:max-h-[70vh] relative pt-10 sm:pt-12 md:pt-14"
->>>>>>> 4b62dfaa135a43fa68361edb57a63bbc7a6ebdc7
                 style={{
                   scrollbarWidth: 'thin',
                   scrollbarColor: 'rgba(20, 184, 166, 0.4) transparent'
@@ -185,133 +169,133 @@ const EventsSection = () => {
               >
                 {/* Event Content */}
                 <div className="space-y-6 pr-2">
-                {/* Header */}
-                <div className="pr-4 sm:pr-8">
-                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 sm:mb-4">
-                    {events[selectedEvent].title}
-                  </h2>
-                  <p className="text-sm sm:text-base md:text-lg text-navy-100/80 leading-relaxed">
-                    {events[selectedEvent].fullDescription}
-                  </p>
-                </div>
-
-                {/* Event Details Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 py-4 sm:py-5 border-y border-teal-400/20">
-                  <div className="flex items-center space-x-3 sm:space-x-4">
-                    <div className="bg-teal-500/20 p-2 sm:p-3 rounded-xl">
-                      <Calendar className="text-teal-400" size={20} strokeWidth={2} />
-                    </div>
-                    <div>
-                      <p className="text-white/60 text-xs sm:text-sm">Date</p>
-                      <p className="text-white font-medium text-sm sm:text-base">{events[selectedEvent].date}</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center space-x-3 sm:space-x-4">
-                    <div className="bg-teal-500/20 p-2 sm:p-3 rounded-xl">
-                      <Clock className="text-teal-400" size={20} strokeWidth={2} />
-                    </div>
-                    <div>
-                      <p className="text-white/60 text-xs sm:text-sm">Time</p>
-                      <p className="text-white font-medium text-sm sm:text-base">{events[selectedEvent].time}</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center space-x-3 sm:space-x-4">
-                    <div className="bg-teal-500/20 p-2 sm:p-3 rounded-xl">
-                      <MapPin className="text-teal-400" size={20} strokeWidth={2} />
-                    </div>
-                    <div>
-                      <p className="text-white/60 text-xs sm:text-sm">Location</p>
-                      <p className="text-white font-medium text-sm sm:text-base">{events[selectedEvent].location}</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center space-x-3 sm:space-x-4">
-                    <div className="bg-teal-500/20 p-2 sm:p-3 rounded-xl">
-                      <Users className="text-teal-400" size={20} strokeWidth={2} />
-                    </div>
-                    <div>
-                      <p className="text-white/60 text-xs sm:text-sm">Attendees</p>
-                      <p className="text-white font-medium text-sm sm:text-base">{events[selectedEvent].attendees}</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Speakers Section - Only show if there are speakers */}
-                {events[selectedEvent].speakers.length > 0 && (
-                <div className="pb-2">
-                  <div className="flex items-center space-x-3 mb-3 sm:mb-4">
-                    <Mic className="text-teal-400" size={20} strokeWidth={2} />
-                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white">Speakers</h3>
+                  {/* Header */}
+                  <div className="pr-4 sm:pr-8">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 sm:mb-4">
+                      {events[selectedEvent].title}
+                    </h2>
+                    <p className="text-sm sm:text-base md:text-lg text-navy-100/80 leading-relaxed">
+                      {events[selectedEvent].fullDescription}
+                    </p>
                   </div>
 
-                  <div className="grid grid-cols-1 gap-2 sm:gap-3">
-                    {events[selectedEvent].speakers.map((speaker, idx) => (
-                      <div
-                        key={idx}
-                        className="bg-navy-900/50 rounded-xl p-3 sm:p-4 border border-teal-400/20 hover:border-teal-400/40 transition-colors"
-                      >
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center space-x-3 sm:space-x-4 flex-1">
-                            {/* Speaker avatar */}
-                            <div className="relative w-12 h-12 sm:w-16 sm:h-16 flex-shrink-0">
-                              {speaker.photo ? (
-                                <>
-                                  <img 
-                                    src={speaker.photo}
-                                    alt={speaker.name}
-                                    className="w-full h-full rounded-full object-cover ring-2 ring-teal-400/40"
-                                    onError={(e) => {
-                                      e.currentTarget.style.display = 'none';
-                                      const fallback = e.currentTarget.nextElementSibling as HTMLElement;
-                                      if (fallback) fallback.style.display = 'flex';
-                                    }}
-                                  />
-                                  <div 
-                                    className="w-full h-full rounded-full bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center ring-2 ring-teal-400/40 hidden avatar-fallback"
-                                  >
-                                    <span className="text-white font-bold text-lg">
-                                      {speaker.name.charAt(0)}
-                                    </span>
-                                  </div>
-                                </>
-                              ) : (
-                                <div 
-                                  className="w-full h-full rounded-full bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center ring-2 ring-teal-400/40"
-                                >
-                                  <span className="text-white font-bold text-lg">
-                                    {speaker.name.charAt(0)}
-                                  </span>
+                  {/* Event Details Grid */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 py-4 sm:py-5 border-y border-teal-400/20">
+                    <div className="flex items-center space-x-3 sm:space-x-4">
+                      <div className="bg-teal-500/20 p-2 sm:p-3 rounded-xl">
+                        <Calendar className="text-teal-400" size={20} strokeWidth={2} />
+                      </div>
+                      <div>
+                        <p className="text-white/60 text-xs sm:text-sm">Date</p>
+                        <p className="text-white font-medium text-sm sm:text-base">{events[selectedEvent].date}</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center space-x-3 sm:space-x-4">
+                      <div className="bg-teal-500/20 p-2 sm:p-3 rounded-xl">
+                        <Clock className="text-teal-400" size={20} strokeWidth={2} />
+                      </div>
+                      <div>
+                        <p className="text-white/60 text-xs sm:text-sm">Time</p>
+                        <p className="text-white font-medium text-sm sm:text-base">{events[selectedEvent].time}</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center space-x-3 sm:space-x-4">
+                      <div className="bg-teal-500/20 p-2 sm:p-3 rounded-xl">
+                        <MapPin className="text-teal-400" size={20} strokeWidth={2} />
+                      </div>
+                      <div>
+                        <p className="text-white/60 text-xs sm:text-sm">Location</p>
+                        <p className="text-white font-medium text-sm sm:text-base">{events[selectedEvent].location}</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center space-x-3 sm:space-x-4">
+                      <div className="bg-teal-500/20 p-2 sm:p-3 rounded-xl">
+                        <Users className="text-teal-400" size={20} strokeWidth={2} />
+                      </div>
+                      <div>
+                        <p className="text-white/60 text-xs sm:text-sm">Attendees</p>
+                        <p className="text-white font-medium text-sm sm:text-base">{events[selectedEvent].attendees}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Speakers Section - Only show if there are speakers */}
+                  {events[selectedEvent].speakers.length > 0 && (
+                    <div className="pb-2">
+                      <div className="flex items-center space-x-3 mb-3 sm:mb-4">
+                        <Mic className="text-teal-400" size={20} strokeWidth={2} />
+                        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white">Speakers</h3>
+                      </div>
+
+                      <div className="grid grid-cols-1 gap-2 sm:gap-3">
+                        {events[selectedEvent].speakers.map((speaker, idx) => (
+                          <div
+                            key={idx}
+                            className="bg-navy-900/50 rounded-xl p-3 sm:p-4 border border-teal-400/20 hover:border-teal-400/40 transition-colors"
+                          >
+                            <div className="flex items-center justify-between">
+                              <div className="flex items-center space-x-3 sm:space-x-4 flex-1">
+                                {/* Speaker avatar */}
+                                <div className="relative w-12 h-12 sm:w-16 sm:h-16 flex-shrink-0">
+                                  {speaker.photo ? (
+                                    <>
+                                      <img 
+                                        src={speaker.photo}
+                                        alt={speaker.name}
+                                        className="w-full h-full rounded-full object-cover ring-2 ring-teal-400/40"
+                                        onError={(e) => {
+                                          e.currentTarget.style.display = 'none';
+                                          const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+                                          if (fallback) fallback.style.display = 'flex';
+                                        }}
+                                      />
+                                      <div 
+                                        className="w-full h-full rounded-full bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center ring-2 ring-teal-400/40 hidden avatar-fallback"
+                                      >
+                                        <span className="text-white font-bold text-lg">
+                                          {speaker.name.charAt(0)}
+                                        </span>
+                                      </div>
+                                    </>
+                                  ) : (
+                                    <div 
+                                      className="w-full h-full rounded-full bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center ring-2 ring-teal-400/40"
+                                    >
+                                      <span className="text-white font-bold text-lg">
+                                        {speaker.name.charAt(0)}
+                                      </span>
+                                    </div>
+                                  )}
                                 </div>
+                                
+                                <div className="flex-1 min-w-0">
+                                  <h4 className="text-white font-bold text-sm sm:text-base mb-1">{speaker.name}</h4>
+                                  <p className="text-navy-100/70 text-xs sm:text-sm leading-snug">{speaker.title}</p>
+                                </div>
+                              </div>
+                              
+                              {/* LinkedIn link */}
+                              {'linkedin' in speaker && speaker.linkedin && (
+                                <a
+                                  href={speaker.linkedin}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  onClick={(e) => e.stopPropagation()}
+                                  className="text-teal-400/70 hover:text-teal-400 hover:scale-110 transition-all ml-2 sm:ml-4 flex-shrink-0"
+                                  aria-label={`${speaker.name}'s LinkedIn`}
+                                >
+                                  <Linkedin size={18} strokeWidth={2} />
+                                </a>
                               )}
                             </div>
-                            
-                            <div className="flex-1 min-w-0">
-                              <h4 className="text-white font-bold text-sm sm:text-base mb-1">{speaker.name}</h4>
-                              <p className="text-navy-100/70 text-xs sm:text-sm leading-snug">{speaker.title}</p>
-                            </div>
                           </div>
-                          
-                          {/* LinkedIn link */}
-                          {'linkedin' in speaker && speaker.linkedin && (
-                            <a
-                              href={speaker.linkedin}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              onClick={(e) => e.stopPropagation()}
-                              className="text-teal-400/70 hover:text-teal-400 hover:scale-110 transition-all ml-2 sm:ml-4 flex-shrink-0"
-                              aria-label={`${speaker.name}'s LinkedIn`}
-                            >
-                              <Linkedin size={18} strokeWidth={2} />
-                            </a>
-                          )}
-                        </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
-                </div>
-                )}
+                    </div>
+                  )}
                 </div>
               </div>
             </motion.div>
