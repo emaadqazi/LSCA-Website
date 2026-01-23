@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Header from './layout/Header'
 import HeroSection from './features/HeroSection'
 import AboutSection from './sections/AboutSection'
 import EventsSection from './sections/EventsSection'
-import GetInvolvedSection from './sections/GetInvolvedSection'
+// import GetInvolvedSection from './sections/GetInvolvedSection'
 import TeamSection from './sections/TeamSection'
 import ContactSection from './sections/ContactSection'
 
@@ -85,7 +85,6 @@ const connections = [
 const SinglePage = () => {
   const [scrollY, setScrollY] = useState(0)
   const [viewportHeight, setViewportHeight] = useState(0)
-  const { scrollYProgress } = useScroll()
 
   useEffect(() => {
     // Add smooth scrolling behavior to the entire page
@@ -133,9 +132,9 @@ const SinglePage = () => {
       {/* Animated Background Overlay */}
       <div className="fixed inset-0 z-0">
         {/* Subtle gradient orbs with logo colors */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-teal-500/8 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-teal-600/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-teal-500/8 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute top-0 left-0 w-48 h-48 sm:w-64 sm:h-64 md:w-96 md:h-96 bg-teal-500/8 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute top-1/3 right-0 w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] md:w-[500px] md:h-[500px] bg-teal-600/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-0 left-1/4 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[600px] md:h-[600px] bg-teal-500/8 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '4s' }}></div>
         
         {/* Animated mesh gradient */}
         <div className="absolute inset-0 opacity-20">
@@ -153,7 +152,7 @@ const SinglePage = () => {
         }}></div>
 
         {/* Supply Chain Network Visualization - Dynamic with Parallax */}
-        <div className="absolute inset-0 overflow-hidden opacity-30" style={{ height: '100%' }}>
+        <div className="absolute inset-0 overflow-hidden opacity-10 md:opacity-30" style={{ height: '100%' }}>
           {/* Connection Lines - Varying design, appear/disappear dynamically */}
           <svg className="absolute inset-0 w-full" style={{ height: '100%' }}>
             {connections.map((conn, index) => {
@@ -287,7 +286,7 @@ const SinglePage = () => {
             return (
               <motion.div
                 key={`particle-${index}`}
-                className="absolute rounded-full bg-teal-400"
+                className="absolute rounded-full bg-teal-400 hidden md:block"
                 style={{
                   left: fromNode.x,
                   top: fromNode.y,
@@ -330,7 +329,7 @@ const SinglePage = () => {
         <EventsSection />
         
         {/* Get Involved Section */}
-        <GetInvolvedSection />
+        {/* <GetInvolvedSection /> */}
         
         {/* Team Section */}
         <TeamSection />

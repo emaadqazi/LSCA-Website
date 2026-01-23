@@ -1,282 +1,309 @@
 import { motion } from 'framer-motion'
-import { Linkedin, ChevronLeft, ChevronRight } from 'lucide-react'
-import { useState } from 'react'
+import { Linkedin } from 'lucide-react'
 
 const TeamSection = () => {
-  const [activePortfolio, setActivePortfolio] = useState(0)
-
-  const portfolios = [
+  const teams = [
     {
-      name: "Leadership",
-      vps: [
+      name: "Presidents",
+      members: [
         {
           name: "Brady Kuzma",
           role: "Co-President",
-          yearMajor: "3rd Year BBA/BSc Student",
-          image: "/LSCA-Website/images/MembersPFP/VPs/BradyKuzma.png",
-          linkedin: "https://www.linkedin.com/in/brady-kuzma/",
-          email: "brady.kuzma@lsca.ca"
+          yearProgram: "3rd Year BBA/BSc",
+          image: "/images/MembersPFP/VPs/BradyKuzma.png",
+          linkedin: "https://www.linkedin.com/in/brady-kuzma/"
         },
         {
           name: "Konstance Vondouris",
           role: "Co-President",
-          yearMajor: "3rd Year BBA Student",
-          image: "/LSCA-Website/images/MembersPFP/VPs/KonstanceVondouris.png",
-          linkedin: "https://www.linkedin.com/in/konstance-voudouris-628003291/",
-          email: "konstance.vondouris@lsca.ca"
-        },
+          yearProgram: "3rd Year BBA",
+          image: "/images/MembersPFP/VPs/KonstanceVondouris.png",
+          linkedin: "https://www.linkedin.com/in/konstance-voudouris-628003291/"
+        }
+      ]
+    },
+    {
+      name: "Admin",
+      members: [
         {
           name: "Ben Maycock",
           role: "Executive VP",
-          yearMajor: "3rd Year BBA Student",
-          image: "/LSCA-Website/images/MembersPFP/VPs/BenMaycock.png",
-          linkedin: "https://www.linkedin.com/in/ben-maycock-56a84b29b/",
-          email: "ben.maycock@lsca.ca"
+          yearProgram: "3rd Year Economics",
+          image: "/images/MembersPFP/VPs/BenMaycock.png",
+          linkedin: "https://www.linkedin.com/in/ben-maycock-56a84b29b/"
+        },
+        {
+          name: "Evika Trinidade",
+          role: "VP of Internal Affairs",
+          yearProgram: "4th Year BBA",
+          image: "/images/MembersPFP/VPs/EvikaTrinidade.png",
+          linkedin: "https://www.linkedin.com/in/evika-trinidade/"
         },
         {
           name: "Ewan Macneil",
           role: "Senior Advisor",
-          yearMajor: "4th Year BBA Student",
-          image: "/LSCA-Website/images/MembersPFP/VPs/EwanMacneil.png",
-          linkedin: "https://www.linkedin.com/in/ewanmacneil/",
-          email: "ewan.macneil@lsca.ca"
-        }
-      ]
-    },
-    {
-      name: "Marketing",
-      vps: [
-        {
-          name: "Chris Weng",
-          role: "VP of Marketing",
-          yearMajor: "2nd Year BBA/BMath (UW)",
-          image: "/LSCA-Website/images/MembersPFP/VPs/ChrisWeng.png",
-          linkedin: "https://www.linkedin.com/in/chris-weng-intern/",
-          email: "chris.weng@lsca.ca"
-        }
-      ]
-    },
-    {
-      name: "Internal",
-      vps: [
-        {
-          name: "Evika Trinidade",
-          role: "VP of Internal",
-          yearMajor: "4th Year BBA Student",
-          image: "/LSCA-Website/images/MembersPFP/VPs/EvikaTrinidade.png",
-          linkedin: "https://www.linkedin.com/in/evika-trinidade/",
-          email: "evika.trinidade@lsca.ca"
-        }
-      ]
-    },
-    {
-      name: "Events",
-      vps: [
-        {
-          name: "Hailey Krywiak",
-          role: "Co-VP of Events",
-          yearMajor: "3rd Year BBA Student",
-          image: "/LSCA-Website/images/MembersPFP/VPs/HaileyKrywiak.png",
-          linkedin: "https://www.linkedin.com/in/hailey-krywiak-4ba971303/",
-          email: "hailey.krywiak@lsca.ca"
+          yearProgram: "4th Year BBA",
+          image: "/images/MembersPFP/VPs/EwanMacneil.png",
+          linkedin: "https://www.linkedin.com/in/ewanmacneil/"
         },
         {
-          name: "Brayden Greekamol",
-          role: "Co-VP of Events",
-          yearMajor: "3rd Year BBA Student",
-          image: "/LSCA-Website/images/MembersPFP/VPs/BraydenGreekamol.png",
-          linkedin: "https://www.linkedin.com/in/brayden-greekamol/",
-          email: "brayden.greekamol@lsca.ca"
+          name: "Leonidas Bakalis",
+          role: "First Year Representative",
+          yearProgram: "1st Year BBA",
+          image: "/images/MembersPFP/Directors/LeonidasBakalis.png",
+          linkedin: "https://www.linkedin.com/in/leonidas-bakalis-014209308/"
         }
       ]
     },
     {
-      name: "Software",
-      vps: [
-        {
-          name: "Emaad Qazi",
-          role: "VP of Software Development",
-          yearMajor: "3rd Year BBA/BSc Student",
-          image: "/LSCA-Website/images/MembersPFP/VPs/EmaadQazi.png",
-          linkedin: "https://www.linkedin.com/in/emaadqazi/",
-          email: "emaad.qazi@lsca.ca"
-        }
-      ]
-    },
-    {
-      name: "Finance",
-      vps: [
-        {
-          name: "Zanir Khot",
-          role: "VP of Finance",
-          yearMajor: "3rd Year BBA Student",
-          image: "/LSCA-Website/images/MembersPFP/VPs/ZanirKhot.png",
-          linkedin: "https://www.linkedin.com/in/zanirkhot/",
-          email: "zanir.khot@lsca.ca"
-        }
-      ]
-    },
-    {
-      name: "Corporate",
-      vps: [
+      name: "Corporate Relations",
+      members: [
         {
           name: "Abira Selim",
           role: "VP of Corporate Relations",
-          yearMajor: "4th Year BBA Student",
-          image: "/LSCA-Website/images/MembersPFP/VPs/AbiraSelim.png",
-          linkedin: "https://www.linkedin.com/in/abiraselim2004/",
-          email: "abira.selim@lsca.ca"
+          yearProgram: "4th Year BBA",
+          image: "/images/MembersPFP/VPs/AbiraSelim.png",
+          linkedin: "https://www.linkedin.com/in/abiraselim2004/"
+        },
+        {
+          name: "Iqra Morkas",
+          role: "Director of Corporate Relations",
+          yearProgram: "3rd Year BA",
+          image: "/images/MembersPFP/Directors/IqraMorkas.png",
+          linkedin: "https://www.linkedin.com/in/iqra-morkas-0aa121274/"
+        },
+        {
+          name: "James Carmichael",
+          role: "Director of Corporate Relations",
+          yearProgram: "1st Year BBA",
+          image: "/images/MembersPFP/Directors/JamesCarmichael.png",
+          linkedin: "https://www.linkedin.com/in/james-carmichael-95707b374/"
         }
       ]
     },
     {
       name: "Education",
-      vps: [
+      members: [
         {
           name: "Afnan Shan",
           role: "VP of Education",
-          yearMajor: "3rd Year BBA Student",
-          image: "/LSCA-Website/images/MembersPFP/VPs/AfnanShan.png",
-          linkedin: "https://www.linkedin.com/in/afnanshan/",
-          email: "afnan.shan@lsca.ca"
+          yearProgram: "3rd Year BBA",
+          image: "/images/MembersPFP/VPs/AfnanShan.png",
+          linkedin: "https://www.linkedin.com/in/afnanshan/"
+        },
+        {
+          name: "Sebastian Teodorescu",
+          role: "Director of Education",
+          yearProgram: "2nd Year BBA",
+          image: "/images/MembersPFP/Directors/SebastianTeodorescu.png",
+          linkedin: "https://www.linkedin.com/in/sebastian-teodorescu/"
+        },
+        {
+          name: "Majd Abdulkarim",
+          role: "Director of Education",
+          yearProgram: "2nd Year BBA/Finmath",
+          image: "/images/MembersPFP/Directors/MajdAbdulkarim.png",
+          linkedin: "https://www.linkedin.com/in/majdabdulkarim/"
+        },
+        {
+          name: "Ali Razack",
+          role: "Director of Education",
+          yearProgram: "2nd Year BBA",
+          image: "/images/MembersPFP/Directors/AliRazack.png",
+          linkedin: "https://www.linkedin.com/in/ayanali-razack/"
+        },
+      ]
+    },
+    {
+      name: "Events",
+      members: [
+        {
+          name: "Hailey Krywiak",
+          role: "Co-VP of Events",
+          yearProgram: "3rd Year BBA",
+          image: "/images/MembersPFP/VPs/HaileyKrywiak.png",
+          linkedin: "https://www.linkedin.com/in/hailey-krywiak-4ba971303/"
+        },
+        {
+          name: "Brayden Greekamol",
+          role: "Co-VP of Events",
+          yearProgram: "3rd Year BBA",
+          image: "/images/MembersPFP/VPs/BraydenGreekamol.png",
+          linkedin: "https://www.linkedin.com/in/brayden-greekamol/"
+        },
+        {
+          name: "Jay Kapadia",
+          role: "Director of Events",
+          yearProgram: "2nd Year BBA",
+          image: "/images/MembersPFP/Directors/JayKapadia.png",
+          linkedin: "https://www.linkedin.com/in/jay-kap/"
+        },
+        {
+          name: "Kavya Patel",
+          role: "Director of Events",
+          yearProgram: "2nd Year BBA",
+          image: "/images/MembersPFP/Directors/KavyaPatel.png",
+          linkedin: "https://www.linkedin.com/in/kavya-patell/"
+        }
+      ]
+    },
+    {
+      name: "Marketing",
+      members: [
+        {
+          name: "Chris Weng",
+          role: "VP of Marketing",
+          yearProgram: "2nd Year BBA/BMath (UW)",
+          image: "/images/MembersPFP/VPs/ChrisWeng.png",
+          linkedin: "https://www.linkedin.com/in/chris-weng-intern/"
+        },
+        {
+          name: "Ryder Vilanez",
+          role: "Director of Marketing",
+          yearProgram: "1st Year BBA",
+          image: "/images/MembersPFP/Directors/RyderVilanez.png",
+          linkedin: "https://www.linkedin.com/in/rydervilanez/"
+        },
+        {
+          name: "Kaitlyn Lee",
+          role: "Director of Marketing",
+          yearProgram: "2nd Year BBA",
+          image: "/images/MembersPFP/Directors/KaitlynLee.png",
+          linkedin: "https://www.linkedin.com/in/kaitlyn-a-lee/"
+        }
+      ]
+    },
+    {
+      name: "Software",
+      members: [
+        {
+          name: "Emaad Qazi",
+          role: "VP of Software",
+          yearProgram: "3rd Year BBA/BSc",
+          image: "/images/MembersPFP/VPs/EmaadQazi.jpg",
+          linkedin: "https://www.linkedin.com/in/emaadqazi/"
+        },
+        {
+          name: "Moeez Ishaq",
+          role: "Director of Software",
+          yearProgram: "3rd Year BBA/BSc",
+          image: "/images/MembersPFP/Directors/MoeezIshaq.png",
+          linkedin: "https://www.linkedin.com/in/moeez-ishaq/"
+        },
+        {
+          name: "David Zhao",
+          role: "Director of Software",
+          yearProgram: "2nd Year CS",
+          image: "/images/MembersPFP/Directors/DavidZhao.png",
+          linkedin: "https://www.linkedin.com/in/david-zhao-0524dz/"
+        }
+      ]
+    },
+    {
+      name: "Finance",
+      members: [
+        {
+          name: "Zanir Khot",
+          role: "VP of Finance",
+          yearProgram: "3rd Year BBA",
+          image: "/images/MembersPFP/VPs/ZanirKhot.png",
+          linkedin: "https://www.linkedin.com/in/zanirkhot/"
+        },
+        {
+          name: "Nicholas Cornea",
+          role: "Director of Finance",
+          yearProgram: "2nd Year BBA",
+          image: "/images/MembersPFP/Directors/NicholasCornea.png",
+          linkedin: "https://www.linkedin.com/in/nicholas-cornea-716350217/"
         }
       ]
     }
   ]
 
-  const nextPortfolio = () => {
-    setActivePortfolio((prev) => (prev + 1) % portfolios.length)
-  }
-
-  const prevPortfolio = () => {
-    setActivePortfolio((prev) => (prev - 1 + portfolios.length) % portfolios.length)
-  }
-
   return (
-    <section id="team" className="min-h-screen flex items-center justify-center px-8 py-20">
+    <section id="team" className="min-h-screen px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 md:mb-8 leading-tight">
             Meet the <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-300">Team</span>
           </h2>
-          <p className="text-xl md:text-2xl text-navy-100/80 max-w-4xl mx-auto leading-relaxed font-light">
-            Get to know the LSCA team, consisting of 12 VPs and 15+ Directors across 8 portfolios!
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-navy-100/80 max-w-4xl mx-auto leading-relaxed font-light px-4">
+            Get to know the LSCA team, consisting of 12 VPs and 15 Directors across 6 portfolios!
           </p>
         </motion.div>
 
-        {/* Portfolio Navigation */}
-        <div className="flex justify-center items-center mb-12">
-          <motion.button
-            onClick={prevPortfolio}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="p-3 rounded-full bg-navy-800/40 backdrop-blur-md border border-teal-400/20 text-teal-400 hover:border-teal-400/40 hover:bg-navy-800/60 transition-all duration-300 mr-6"
-          >
-            <ChevronLeft size={24} />
-          </motion.button>
-          
-          <div className="flex space-x-4">
-            {portfolios.map((portfolio, index) => (
-              <motion.button
-                key={index}
-                onClick={() => setActivePortfolio(index)}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                  activePortfolio === index
-                    ? 'bg-gradient-to-r from-teal-500 to-teal-400 text-white shadow-lg shadow-teal-500/30'
-                    : 'bg-navy-800/40 backdrop-blur-md border border-teal-400/20 text-navy-100/80 hover:border-teal-400/40'
-                }`}
-              >
-                {portfolio.name}
-              </motion.button>
-            ))}
-          </div>
-          
-          <motion.button
-            onClick={nextPortfolio}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="p-3 rounded-full bg-navy-800/40 backdrop-blur-md border border-teal-400/20 text-teal-400 hover:border-teal-400/40 hover:bg-navy-800/60 transition-all duration-300 ml-6"
-          >
-            <ChevronRight size={24} />
-          </motion.button>
+        {/* All Teams Display */}
+        <div className="space-y-12 md:space-y-16">
+          {teams.map((team, teamIndex) => (
+            <motion.div
+              key={teamIndex}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              {/* Section Heading */}
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 md:mb-8">
+                {team.name}
+              </h3>
+
+              {/* Team Members Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-items-start">
+                {team.members.map((member, memberIndex) => (
+                  <motion.div
+                    key={memberIndex}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: memberIndex * 0.1 }}
+                    viewport={{ once: true }}
+                    className="flex flex-col items-start text-left"
+                  >
+                    {/* Profile Picture */}
+                    <div className={`mb-3 md:mb-4 ${member.name === "James Carmichael" ? "overflow-hidden rounded-full" : ""}`}>
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className={`w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full object-cover ${member.name === "James Carmichael" ? "object-center scale-110" : ""}`}
+                      />
+                    </div>
+                    
+                    {/* Name */}
+                    <h4 className="text-base sm:text-lg font-bold text-white mb-1 md:mb-2">
+                      {member.name}
+                    </h4>
+                    
+                    {/* Role */}
+                    <p className="text-navy-100/90 font-medium mb-1 md:mb-2 text-xs sm:text-sm">
+                      {member.role}
+                    </p>
+                    
+                    {/* Year/Program */}
+                    <p className="text-navy-100/60 mb-2 md:mb-3 text-xs">
+                      {member.yearProgram}
+                    </p>
+                    
+                    {/* LinkedIn Link */}
+                    <motion.a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.1 }}
+                      className="inline-flex items-center text-teal-400/60 hover:text-teal-400 transition-colors"
+                    >
+                      <Linkedin size={18} />
+                    </motion.a>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </div>
-
-        {/* Active Portfolio Display */}
-        <motion.div
-          key={activePortfolio}
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center"
-        >
-          <div className="mb-12">
-            <h3 className="text-5xl font-bold mb-4 bg-gradient-to-r from-teal-400 to-teal-300 bg-clip-text text-transparent">
-              {portfolios[activePortfolio].name}
-            </h3>
-          </div>
-
-          {/* Team Members - Dynamic Grid Based on Count */}
-          <div className={`grid gap-12 justify-items-center ${
-            portfolios[activePortfolio].vps.length === 1 
-              ? 'grid-cols-1 max-w-md mx-auto'
-              : portfolios[activePortfolio].vps.length === 2
-              ? 'grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto'
-              : portfolios[activePortfolio].vps.length === 3
-              ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto'
-              : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 max-w-7xl mx-auto'
-          }`}>
-            {portfolios[activePortfolio].vps.map((member, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center group flex flex-col items-center"
-              >
-                {/* Large Profile Picture */}
-                <div className="mb-6 relative">
-                  <div className="absolute inset-0 bg-teal-400/20 rounded-full blur-2xl group-hover:bg-teal-400/30 transition-all duration-300"></div>
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="relative w-96 h-96 md:w-[28rem] md:h-[28rem] rounded-full mx-auto object-cover border-4 border-teal-400/30 shadow-xl group-hover:border-teal-400/50 transition-all duration-300"
-                  />
-                </div>
-                
-                {/* Text Content Container with Fixed Height */}
-                <div className="flex flex-col items-center justify-center min-h-[120px] w-full">
-                  {/* Name */}
-                  <h5 className="text-2xl md:text-3xl font-bold text-white mb-3 leading-tight group-hover:text-teal-400 transition-colors">{member.name}</h5>
-                  
-                  {/* Role */}
-                  <p className="text-navy-100/90 font-medium mb-2 text-xl leading-tight min-h-[28px] flex items-center justify-center">{member.role}</p>
-                  
-                  {/* Year/Major */}
-                  {member.yearMajor && (
-                    <p className="text-navy-100/60 mb-4 text-base font-normal leading-tight min-h-[24px] flex items-center justify-center text-center">{member.yearMajor}</p>
-                  )}
-                </div>
-                
-                {/* LinkedIn Link */}
-                <motion.a
-                  href={member.linkedin}
-                  whileHover={{ scale: 1.1 }}
-                  className="inline-flex items-center text-teal-400/60 hover:text-teal-400 transition-colors mt-2"
-                >
-                  <Linkedin size={20} />
-                </motion.a>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   )
