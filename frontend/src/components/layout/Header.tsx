@@ -109,7 +109,6 @@ const Header = () => {
           </button>
         </nav>
 
-<<<<<<< HEAD
         {/* Mobile Menu Button */}
         <button 
           onClick={toggleMobileMenu}
@@ -120,9 +119,6 @@ const Header = () => {
         </button>
 
         {/* Social Media Links - Desktop Only */}
-=======
-        {/* Social Media Links - Desktop */}
->>>>>>> 4b62dfaa135a43fa68361edb57a63bbc7a6ebdc7
         <div className="hidden md:flex items-center space-x-4">
           <a 
             href="https://www.linkedin.com/company/lauriersupplychainassociation/" 
